@@ -1,0 +1,6 @@
+// Stake social vocabulary applies to every user-facing translated string.
+export function socialText(text:string,ru:boolean):string{
+ if(ru)return text.replace(/ставки/gi,'игровой суммы').replace(/ставку/gi,'игровую сумму').replace(/ставка/gi,'игровая сумма').replace(/ставке/gi,'игровой сумме').replace(/купить/gi,'запустить').replace(/покупка/gi,'запуск').replace(/покупки/gi,'запуска').replace(/покупке/gi,'запуске').replace(/покупку/gi,'запуск').replace(/выплаты/gi,'выигрыши').replace(/выплата/gi,'выигрыш').replace(/выплату/gi,'выигрыш').replace(/средств/gi,'монет').replace(/кредитов/gi,'монет');
+ const phrases:[RegExp,string][]=[[/\bprofit\b/gi,'net gain'],[/\bbuying\b/gi,'playing'],[/paytable/gi,'win table'],[/payouts?/gi,'win'],[/pays out/gi,'won'],[/pay out/gi,'win'],[/paid out/gi,'won'],[/buy bonus/gi,'get bonus'],[/bonus buy/gi,'bonus'],[/total bets?/gi,'total play'],[/\bstakes?\b/gi,'play amount'],[/\bbetting\b/gi,'playing'],[/\bbets?\b/gi,'play'],[/\bbuy\b/gi,'play'],[/\bbought\b/gi,'instantly triggered'],[/\bpurchase\b/gi,'play'],[/\bpays?\b/gi,'wins'],[/\bpaid\b/gi,'won'],[/\bmoney\b/gi,'coins'],[/\bcredits?\b/gi,'balance'],[/\bcurrency\b/gi,'token'],[/\bfunds?\b/gi,'balance']];
+ return phrases.reduce((value,[pattern,replacement])=>value.replace(pattern,replacement),text);
+}

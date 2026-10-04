@@ -1,0 +1,43 @@
+.entrance-backdrop{position:absolute;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none}
+.loading-v24{isolation:isolate;background:#211306;gap:13px;text-align:center;padding:20px;overflow:hidden}
+.loading-brand{width:min(360px,74vw);height:min(160px,22svh)}
+.loading-brand>.raster{width:100%;height:100%}
+.loading-nest{position:relative;width:min(170px,30vw);height:min(180px,25svh)}
+.loading-nest .raster{position:absolute;width:100%;height:100%;inset:0}
+.loading-egg{animation:egg-awakening 2.8s ease-in-out infinite;transform-origin:50% 82%}
+.loading-halo{animation:nest-breath 3.5s ease-in-out infinite;mix-blend-mode:screen;opacity:.55}
+.loading-v24 p{font:13px/1.3 AlphaUI,Arial,sans-serif;letter-spacing:2px;color:#ffedbc;text-shadow:0 2px 3px #1d1005}
+.loading-progress{display:flex;align-items:center;gap:15px;width:min(340px,78vw)}
+.loading-progress .loading-track{height:8px;flex:1;background:#251409;border:1px solid #ab783d;border-radius:5px;box-shadow:0 1px 8px #160c0780}
+.loading-progress .loading-track>span{background:#edc873;box-shadow:0 0 13px #ffe8a3}
+.loading-progress b{width:48px;color:#fff0c9;font:23px/1 AlphaUI,Arial,sans-serif;font-variant-numeric:tabular-nums}
+.loading-progress small{font-size:11px;color:#e7c287}
+.loading-hint{font:9px/1.3 AlphaUI,Arial,sans-serif;letter-spacing:1.5px;color:#dec392}
+.loading-preview{position:relative;inset:auto;min-height:390px;height:min(550px,70svh);border-radius:10px;width:100%;z-index:1}
+.loading-preview .loading-brand,.loading-preview .loading-progress{max-width:100%}
+.welcome-frame{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.welcome-premium .welcome-lessons{gap:10px}
+.welcome-lessons article{position:relative;isolation:isolate;animation:welcome-card-in .58s cubic-bezier(.18,.72,.2,1) both;padding:8px 12px;gap:12px}
+.welcome-lessons article+article{border:0}
+.welcome-card{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.9}
+.welcome-hero{animation:welcome-host-in .8s .1s cubic-bezier(.2,.7,.2,1) both}
+.welcome-premium .welcome-lessons p{color:#f3e4bf}
+.welcome-premium .welcome-brand [data-slot=dialog-description]{color:#f5daa1}
+.barn-burst{position:fixed;inset:0;width:100%;height:100%;z-index:18;pointer-events:none}
+@media(orientation:portrait){
+ .game-shell{--mobile-inner:calc(var(--mobile-width) - 4px);--mobile-frame-pad:4px;--mobile-frame:calc((var(--mobile-inner) - 2 * var(--mobile-frame-pad)) * .69 + 2 * var(--mobile-frame-pad))}
+ .game-stage{padding-left:2px;padding-right:2px}
+ .hero-spot{left:-10px}
+}
+.bonus-anticipation .reel-frame{animation:barn-pressure 3s ease-out both}
+.barn-dialog[data-open]{animation:barn-reveal-v24 .65s cubic-bezier(.18,.75,.2,1) both}
+.barn-dialog .feature-heading{animation:welcome-card-in .5s .15s both}
+@keyframes egg-awakening{0%,60%,100%{transform:rotate(0deg) translateY(0)}20%{transform:rotate(-4deg) translateY(-3px)}35%{transform:rotate(4deg) translateY(-2px)}47%{transform:rotate(-2deg)}}
+@keyframes nest-breath{0%,100%{transform:scale(.95);opacity:.38}50%{transform:scale(1.09);opacity:.66}}
+@keyframes welcome-card-in{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+@keyframes welcome-host-in{from{opacity:0;translate:-16px 0}to{opacity:1;translate:0 0}}
+@keyframes barn-pressure{0%,30%,100%{translate:0 0}45%{translate:0 -2px}47%{translate:2px 1px}49%{translate:-2px 0}53%{translate:1px -1px}58%{translate:0 0}}
+@keyframes barn-reveal-v24{from{opacity:0;transform:translateY(24px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(orientation:portrait){.welcome-lessons article{padding:10px 8px;gap:10px}.welcome-premium .welcome-lessons{gap:8px}.loading-preview{min-height:330px}.loading-v24 p{font-size:11px;letter-spacing:1px}.loading-hint{font-size:8px;letter-spacing:.7px}}
+@media(orientation:landscape) and (max-height:300px){.loading-v24{gap:5px;padding:10px}.loading-brand{height:55px;width:150px}.loading-nest{height:62px;width:65px}.loading-v24 p{font-size:8px}.loading-progress{width:230px}.loading-hint{font-size:6px}.welcome-lessons article{padding:4px;gap:2px}.welcome-lessons article+article{padding-left:4px}.welcome-premium .welcome-lessons{gap:5px}.loading-preview{min-height:170px;height:170px}}
+@media(prefers-reduced-motion:reduce){.loading-egg,.loading-halo,.welcome-lessons article,.welcome-hero,.bonus-anticipation .reel-frame,.barn-dialog[data-open],.barn-dialog .feature-heading{animation:none}}

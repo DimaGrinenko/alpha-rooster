@@ -1,0 +1,40 @@
+{
+  "name": "alpha-rooster",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "@esotericsoftware/spine-canvas": "^4.2.99",
+    "@esotericsoftware/spine-webgl": "^4.2.99",
+    "tw-animate-css": "1.4.0",
+    "shadcn": "4.18.0",
+    "@base-ui/react": "1.7.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "tailwind-merge": "3.6.0",
+    "lucide-react": "1.31.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.0.2",
+    "@tailwindcss/postcss": "4.2.1",
+    "tailwindcss": "4.2.1",
+    "vite": "8.0.13",
+    "typescript": "5.9.3",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3"
+  },
+  "scripts": {
+    "dev": "vite --config vite.stake.config.ts --host 127.0.0.1",
+    "build": "vite build --config vite.stake.config.ts",
+    "preview": "vite preview --config vite.stake.config.ts --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/animation-clock.test.ts tests/approval-regressions.test.ts tests/barn-atmosphere.test.ts tests/barn-birds.test.ts tests/barn-collapse.test.ts tests/barn-hens.test.ts tests/barn-life.test.ts tests/bonus-modes-rgs.test.ts tests/bonus-modes.test.ts tests/canvas-seam-guard.test.ts tests/collect-lifecycle.test.ts tests/collect-presentation.test.ts tests/engine.test.ts tests/feature-motion-v27.test.ts tests/rgs-mode-resume-v27.test.ts tests/rgs-response-status.test.ts tests/win-presentation.test.ts"
+  }
+}

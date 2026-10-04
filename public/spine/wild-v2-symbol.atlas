@@ -1,0 +1,16 @@
+symbols-master-v25.webp
+size: 2048, 1536
+filter: Linear, Linear
+repeat: none
+skin-crown
+bounds: 520, 524, 496, 487
+offsets: 0, 0, 496, 487
+skin-wingL
+bounds: 520, 524, 496, 487
+offsets: 0, 0, 496, 487
+skin-wingR
+bounds: 520, 524, 496, 487
+offsets: 0, 0, 496, 487
+skin-body
+bounds: 520, 524, 496, 487
+offsets: 0, 0, 496, 487

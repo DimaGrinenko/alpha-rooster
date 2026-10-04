@@ -1,0 +1,36 @@
+Audio sources verified 2026-09-08. All assets below have explicit CC0 license on their primary upload page.
+
+SHIPPED FILES: music.mp3 = Country by Alex McCulloch; crow.mp3 = Rooster Song by DenisChardonnet; spin.ogg, stop.ogg and win.ogg = sounds from Kenney Casino Audio.
+Happy Clappy Loop was evaluated during research and is NOT included or played in this build. The descriptive filenames below identify the original research downloads, not runtime filenames.
+
+rooster-crow-cc0.mp3
+Title: Rooster Song. Author: DenisChardonnet. 3 seconds, actual rooster crow.
+Source/license: https://bigsoundbank.com/song-of-rooster-s0283.html
+Download: https://bigsoundbank.com/UPLOAD/mp3/0283.mp3
+CC0. Page explicitly allows commercial use, processing, redistribution; attribution optional.
+
+happy-clappy-loop-cc0.wav
+Title: Happy Clappy Loop. Author: OwlishMedia.
+Source/license: https://opengameart.org/content/happy-clappy-loop
+Download: https://opengameart.org/sites/default/files/HappyClappyLoop.wav
+CC0 https://creativecommons.org/publicdomain/zero/1.0/
+Uploader describes a seamless cheerful, upbeat piano game loop. Recommended primary backing track.
+
+country-alex-mcculloch-cc0.mp3
+Title: Country. Author: Alex McCulloch / Pro Sensory.
+Source/license: https://opengameart.org/content/country
+Download: https://opengameart.org/sites/default/files/Country1_1.mp3
+CC0. Credit Alex McCulloch appreciated but not required. Alternative thematic track; seamless looping not claimed by source.
+
+kenney-casino/Audio/*.ogg
+Title: Casino Audio. Author: Kenney.
+Source/license: https://kenney.nl/assets/casino-audio
+Download: https://kenney.nl/media/pages/assets/casino-audio/2472606a04-1721639069/kenney_casino-audio.zip
+CC0 https://creativecommons.org/publicdomain/zero/1.0/
+Suggested chip/card/dice foley for spin, symbol land and coin payout. No dedicated musical win jingle in this pack.
+
+V14 event cues (CC0):
+Egg crack: davdud101, https://freesound.org/people/davdud101/sounds/150479/
+Crate impact: Independent.nu, https://opengameart.org/content/35-wooden-crackshitsdestructions
+Win chime: Kenney Music Jingles, https://kenney.nl/assets/music-jingles
+Editing/source provenance: art-direction/premium-v14/AUDIO-SOURCES.md

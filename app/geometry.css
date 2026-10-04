@@ -1,0 +1,293 @@
+/* One scene coordinate system. Five equal square cells; one deck baseline. */
+.game-shell{--u:min(1.12px,calc(100vw / 1200),calc((100svh - var(--dock-reserve) - var(--session-offset)) / 620));--deck-width:min(1152px,calc(100vw - 32px));--deck-height:116px;--deck-bottom:26px;--dock-reserve:calc(var(--deck-height) + var(--deck-bottom) + 8px + env(safe-area-inset-bottom));--scene-height:calc(620 * var(--u))}
+.game-stage{position:relative;width:calc(1200 * var(--u));height:var(--scene-height);aspect-ratio:auto;display:block;padding:0;margin:0 0 calc(var(--dock-reserve) + var(--session-offset));flex-shrink:0}
+.game-header{position:absolute;inset:calc(6 * var(--u)) calc(24 * var(--u)) auto;height:calc(112 * var(--u))}
+.game-header .game-logo{left:calc(645 * var(--u));top:0;width:calc(310 * var(--u));height:calc(112 * var(--u));transform:translateX(-50%)}
+.edition,.demo-label{font-size:max(8px,calc(10 * var(--u)));padding:calc(6 * var(--u)) calc(9 * var(--u));border-radius:calc(5 * var(--u))}
+.playground{position:absolute;left:calc(-8 * var(--u));top:calc(124 * var(--u));width:calc(1176 * var(--u));height:calc(481.2 * var(--u));display:grid;grid-template-columns:calc(320 * var(--u)) calc(690 * var(--u));gap:calc(12 * var(--u));transform:none}
+.hero-spot{position:relative;left:auto;bottom:auto;width:100%;height:calc(450 * var(--u));margin-top:calc(36 * var(--u));z-index:4}
+.hero-spot>.spine-art{inset:0;width:100%;height:100%}
+.crow-bubble{left:50%;top:0;transform:translateX(-50%);font-size:max(8px,calc(11 * var(--u)));padding:6px 9px;animation:crow-message 3s both}
+.reel-area{height:100%;display:grid;grid-template-rows:calc(22 * var(--u)) calc(425.2 * var(--u)) calc(34 * var(--u))}
+.reel-caption{padding:0 calc(14 * var(--u));font-size:max(8px,calc(12 * var(--u)));letter-spacing:.6px;line-height:1}
+.reel-caption strong{font-size:max(11px,calc(16 * var(--u)));letter-spacing:1px}
+.reel-caption>span:last-child{font-size:max(7px,calc(9 * var(--u)));visibility:visible}
+.reel-frame{height:100%;padding:calc(14 * var(--u));border-radius:calc(18 * var(--u));background:#074e53;box-shadow:0 8px 20px #00292466}
+.reel-frame>.frame-art{inset:0;width:100%;height:100%;border-radius:inherit}
+.reels{border-radius:calc(14 * var(--u));background:#085060;box-shadow:inset 0 3px 12px #002e35}
+.reel{border:0;background:linear-gradient(90deg,#002c3c26,transparent 25%,#74f1dd09 50%,transparent 75%,#002c3c26)}
+.reel+.reel{box-shadow:inset 1px 0 #94eee525}
+.symbol{border:0}
+.symbol+.symbol{box-shadow:inset 0 1px #8ee8df16}
+.cell-highlight{inset:3px;border-radius:8px}
+.symbol.winning .cell-highlight{background:radial-gradient(ellipse,#ffe1986b,#e8b94b16 75%);opacity:1;box-shadow:inset 0 0 0 1px #ffdf8670}
+.multiplier{font-family:AlphaUI,Arial,sans-serif;font-size:clamp(14px,calc(30 * var(--u)),35px);right:6%;bottom:4%}
+.sticky-dot{font-size:max(6px,calc(8 * var(--u)))}
+.bonus-anticipation .symbol.scatter{animation:none}
+.bonus-anticipation .symbol.scatter .cell-highlight{animation:scatter-glow .8s ease-in-out infinite}
+.status-message{font-size:max(8px,calc(11 * var(--u)));letter-spacing:.8px}
+.status-message>output{background:#06343ab8;padding:5px 14px;border:1px solid #a5ecdf20;color:#def7ed}
+.status-message .win-meter{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;width:100%}
+.status-message .win-meter-title{justify-self:end;font-size:max(10px,calc(15 * var(--u)))}
+.status-message .win-meter>strong{grid-column:2;min-width:7.5ch;text-align:center;font-size:max(20px,calc(31 * var(--u)));font-family:AlphaUI,Arial,sans-serif;letter-spacing:0}
+.reel-caption .bonus-total{gap:5px}
+.bonus-total small{font-size:max(6px,calc(8 * var(--u)))}
+.bonus-total b{font-size:max(9px,calc(13 * var(--u)))}
+.game-stage>.controls{position:fixed;left:50%;bottom:calc(var(--deck-bottom) + env(safe-area-inset-bottom) + var(--session-offset));width:var(--deck-width);height:var(--deck-height);transform:translateX(-50%);display:grid;grid-template-columns:82px 44px minmax(110px,1fr) minmax(100px,1fr) minmax(132px,1fr) 64px 44px;grid-template-rows:1fr;align-items:center;align-content:center;gap:16px;padding:10px 24px;margin:0;border-radius:24px;background:transparent;box-shadow:none}
+.hud-surface{border-radius:inherit}
+.hud-composite{background:none;border-radius:0;overflow:visible}
+.hud-composite>.hud-art-frame{position:absolute;inset:0;width:100%;height:100%}
+.hud-composite>.hud-art-fill{position:absolute;inset:calc(var(--deck-height) * .075);width:calc(100% - var(--deck-height) * .15);height:85%;border-radius:calc(var(--deck-height) * .6) / calc(var(--deck-height) * .38)}
+.hud-composite-portrait>.hud-art-fill{inset:5px;width:calc(100% - 10px);height:calc(100% - 10px);border-radius:15px}
+.controls .buy-button{width:82px;height:54px;gap:0;padding:4px 8px;border:1px solid #efd47e57;border-radius:10px;background:linear-gradient(#debf5124,#b2762d12)}
+.controls .buy-button>.ui-icon{width:30px;height:30px}
+.buy-button>span{font-size:9px;letter-spacing:.5px}
+.controls .hud-menu{width:44px;height:44px;padding:11px}
+.money{gap:5px;align-self:center}
+.money.balance,.money.hud-win{margin:0;min-width:0;align-items:flex-start}
+.money>span{font-size:10px;letter-spacing:1.2px;line-height:12px;color:#98d4d3}
+.money>b,.bet-value{font-size:23px;line-height:27px;font-weight:600;letter-spacing:0;font-variant-numeric:tabular-nums}
+.money.bet{padding-right:38px;align-items:flex-start}
+.bet-controls{height:27px}
+.controls .bet-value{padding:0;border:0;background:transparent;box-shadow:none}
+.bet-adjust{right:0;top:50%;height:48px;gap:0;transform:translateY(-50%)}
+.controls .bet-adjust button{width:32px;height:24px;padding:6px 9px}
+.controls .spin-button{width:64px;height:64px;margin:0;padding:10px;border:1px solid #f5e4a778;background:linear-gradient(#ffe6a324,#77e5d716);box-shadow:inset 0 0 0 4px #082f36,0 2px 7px #001b2855;border-radius:50%}
+.controls .spin-button:hover:not(:disabled){background:#eac96a33;opacity:1}
+.quick-controls{gap:0;min-width:0;height:56px;justify-content:center}
+.controls .round-button{width:32px;height:28px;padding:5px 7px;border-radius:6px}
+.controls .round-button.active{box-shadow:inset 0 0 0 1px #ffdb8e66;background:#eed07620}
+.auto-stop{inset:6px;font-size:9px}
+.game-stage>.game-bottom{position:fixed;width:calc(var(--deck-width) - 48px);height:16px;left:50%;bottom:calc(5px + env(safe-area-inset-bottom) + var(--session-offset));transform:translateX(-50%);font-size:9px;letter-spacing:.5px}
+.game-bottom .ui-icon{width:14px;height:14px}
+.game-bottom button{gap:5px}
+.replay-cost{grid-column:1;max-width:100%}
+.replay-cost>b{font-size:14px}
+.replay-button-label{bottom:-14px}
+
+/* Fixed frame, independently scrolling body: close and title never drift away. */
+.game-dialog{overflow:hidden;display:flex;flex-direction:column;padding:30px;gap:18px;max-height:calc(100svh - 28px);border-radius:18px;background:#06494f}
+.game-dialog [data-slot=dialog-title]{flex-shrink:0;padding-right:36px}
+.dialog-scroll{min-height:0;overflow:auto;overflow-x:hidden;overscroll-behavior:contain;padding:0 3px 2px;scrollbar-width:thin;scrollbar-color:#5ea89f #063c43}
+.settings-list [data-slot=switch]::after{inset:0}
+.close-dialog{z-index:2;right:24px;top:24px;width:36px;height:36px;padding:10px}
+.game-dialog .dialog-surface{opacity:1}
+.result-meter .win-meter>strong{font-family:AlphaUI,Arial,sans-serif;min-width:8ch}
+.primary-button{flex-shrink:0}
+.settings-list>label,.settings-list>button{min-height:56px}
+.game-dialog.welcome-stage{--host:25%;--welcome-gap:16px;display:grid;grid-template-columns:var(--host) minmax(0,1fr);gap:12px var(--welcome-gap);padding:24px 30px}
+.welcome-masthead,.welcome-footer{grid-column:2;padding-left:0;margin:0}
+.welcome-scene{display:contents}
+.welcome-host{grid-column:1;grid-row:1/4;position:relative}
+.welcome-host>.spine-art{inset:0;width:100%;height:100%}
+.welcome-host>span{bottom:12px}
+.welcome-features{grid-column:2;min-height:0}
+.welcome-feature{min-height:245px}
+.welcome-footer{padding:0}
+.game-dialog.bonus-dialog{padding:28px;gap:10px}
+.bonus-dialog [data-slot=dialog-title],.result-dialog [data-slot=dialog-title]{padding:0}
+.hatch-eggs{--egg-size:88px;gap:8px 18px;width:min(380px,100%);padding:8px 0}
+.hatch-egg{height:var(--egg-size);display:grid;place-items:center}
+.egg-art{position:relative;width:min(100%,calc(var(--egg-size) * 268 / 315));aspect-ratio:268/315;isolation:isolate}
+.egg-art>.raster{position:absolute;pointer-events:none}
+.egg-whole{inset:0;width:100%;height:100%}
+.egg-bottom{left:0;bottom:0;width:100%;height:60.67%;opacity:0}
+.egg-top{left:0;top:0;width:100%;height:55.31%;opacity:0}
+.egg-shard{left:60%;top:32%;width:22%;height:27%;opacity:0}
+.egg-sparkles{inset:0;width:100%;height:100%}
+.egg-award{font-size:34px}
+.golden-hatch{gap:12px}
+@keyframes crow-message{0%,100%{opacity:0;translate:0 4px}12%,72%{opacity:1;translate:0 0}}
+@keyframes scatter-glow{0%,100%{opacity:.25}50%{opacity:.65}}
+
+@media(orientation:landscape) and (max-width:1050px){
+ .game-shell{--deck-height:106px}
+ .game-stage>.controls{grid-template-columns:66px 36px minmax(90px,1fr) minmax(75px,1fr) minmax(112px,1fr) 58px 32px;gap:12px;padding:8px 22px}
+ .controls .buy-button{width:66px;height:50px}
+ .controls .hud-menu{width:36px;height:40px;padding:9px}
+ .controls .spin-button{width:58px;height:58px;padding:10px}
+ .money>b,.bet-value{font-size:20px;line-height:24px}
+ .bet-controls{height:24px}
+ .money>span{font-size:9px}
+ .controls .bet-adjust button{width:28px}
+ .money.bet{padding-right:30px}
+ .game-dialog.welcome-stage{padding:18px 24px}
+ .welcome-feature{min-height:226px}
+}
+@media(orientation:landscape) and (max-height:500px){
+ .game-shell{--u:min(1px,calc(100vw / 1200),calc((100svh - var(--dock-reserve) - var(--session-offset)) / 620));--deck-height:90px;--deck-bottom:22px}
+ .game-stage{margin-bottom:calc(var(--dock-reserve) + var(--session-offset))}
+ .game-stage>.controls{grid-template-columns:62px 32px minmax(85px,1fr) minmax(108px,1fr) 48px 28px;gap:12px;padding:6px 20px}
+ .money.hud-win{display:none}
+ .controls .buy-button{width:62px;height:46px;padding:3px 5px}
+ .controls .buy-button>.ui-icon{width:26px;height:26px}
+ .controls .spin-button{width:48px;height:48px;padding:8px}
+ .controls .hud-menu{width:32px;height:38px;padding:8px}
+ .controls .round-button{width:28px;height:25px;padding:5px 6px}
+ .quick-controls{height:50px}
+ .money>b,.bet-value{font-size:18px;line-height:22px}
+ .bet-controls{height:22px}
+ .money>span{font-size:8px;line-height:10px}
+ .game-stage>.game-bottom{font-size:8px;height:13px}
+ .game-dialog.welcome-stage{padding:12px 22px;gap:8px 12px}
+ .welcome-feature{min-height:193px}
+ .welcome-vignette{height:95px}
+ .welcome-masthead{min-height:65px}
+ .welcome-footer{gap:8px}
+ .game-dialog.bonus-dialog{padding:18px 24px;gap:6px}
+ .hatch-eggs{--egg-size:56px;gap:3px 14px;width:290px}
+ .egg-award{font-size:23px}
+ .golden-hatch{gap:8px}
+ .hatch-counter strong{font-size:32px}
+ .golden-hatch>.primary-button{min-height:38px;padding:8px 18px}
+ .result-dialog>.spine-art{height:120px}
+}
+@media(orientation:portrait){
+ .game-shell{--deck-width:calc(100vw - 20px);--deck-height:136px;--deck-bottom:27px;--scene-width:min(100vw,520px);--portrait-reserve:175px;--host-space:max(0px,calc(100svh - var(--portrait-reserve) - env(safe-area-inset-bottom) - var(--session-offset) - (var(--scene-width) - 36px) * .6 - 102px));--u:calc(var(--scene-width) / 425)}
+ .game-stage{position:relative;width:min(520px,100vw);max-width:520px;height:100svh;max-height:none;margin:0;padding:0;display:block}
+ .game-header{inset:14px 12px auto;height:calc(100svh - 175px - (var(--scene-width) - 36px) * .6 - 78px)}
+ .game-header .game-logo{left:73%;top:calc(20 * var(--u));width:54%;height:min(calc(122 * var(--u)),max(28px,calc(var(--host-space) - 40px)));max-height:none}
+ .edition,.demo-label{font-size:8px;letter-spacing:.5px;padding:5px 6px}
+ .playground{left:10px;top:auto;bottom:calc(175px + env(safe-area-inset-bottom) + var(--session-offset));width:calc(100% - 20px);height:calc((var(--scene-width) - 36px) * .6 + 70px);display:block;transform:none}
+ .reel-area{grid-template-rows:24px minmax(0,1fr) 30px;height:100%}
+ .reel-frame{padding:8px;border-radius:13px}
+ .reels{border-radius:9px}
+ .hero-spot{position:absolute;left:0;bottom:calc(100% - 2px);width:47%;height:min(31svh,calc(var(--scene-width) * .56),var(--host-space));margin:0;z-index:4}
+ .hero-spot>.spine-art{inset:0;width:100%;height:100%}
+ .crow-bubble{font-size:8px;padding:5px}
+ .reel-caption{padding:0 8px;font-size:8px;letter-spacing:.3px}
+ .reel-caption strong{font-size:10px;letter-spacing:.5px}
+ .reel-caption>span:last-child{visibility:hidden;font-size:7px}
+ .free-mode .reel-caption>span:last-child{visibility:visible}
+ .reel-caption .bonus-total{gap:4px}
+ .bonus-total small{font-size:6px}.bonus-total b{font-size:10px}
+ .status-message{font-size:9px}.status-message .win-meter-title{font-size:10px}.status-message .win-meter>strong{font-size:23px}
+ .multiplier{font-size:clamp(17px,5.6vw,25px)}
+ .game-stage>.controls{display:grid;grid-template-columns:64px 42px minmax(0,1fr) 64px 34px;grid-template-rows:42px 62px;gap:7px 8px;padding:10px 16px;border-radius:18px;max-width:500px}
+ .money.balance{grid-column:1/4;grid-row:1;align-items:flex-start;margin:0}
+ .money.hud-win{display:none}
+ .money.bet{grid-column:4/6;grid-row:1;padding-right:26px;align-items:flex-end}
+ .money>span{font-size:9px;line-height:11px}.money>b,.bet-value{font-size:20px;line-height:24px}.bet-controls{height:24px}
+ .controls .bet-adjust button{width:24px;height:22px;padding:6px}
+ .bet-adjust{height:44px}
+ .controls .buy-button{grid-column:1;grid-row:2;width:64px;height:48px;align-self:center}
+ .controls .buy-button>.ui-icon{width:27px;height:27px}.buy-button>span{font-size:8px}
+ .controls .hud-menu{grid-column:2;grid-row:2;width:42px;height:44px;padding:11px}
+ .controls .spin-button{grid-column:4;grid-row:2;width:62px;height:62px;margin:0;padding:10px}
+ .quick-controls{grid-column:5;grid-row:2;height:60px;gap:4px}
+ .controls .round-button{width:32px;height:28px;padding:5px 7px}
+ .replay-cost{grid-column:1/3;grid-row:2}
+ .controls:has(.replay-cost) .hud-menu{grid-column:3}
+ .game-stage>.game-bottom{max-width:468px;width:calc(var(--deck-width) - 32px);font-size:7px;letter-spacing:.2px;height:16px}
+ .game-bottom .ui-icon{width:12px;height:12px}.game-bottom button{gap:3px}
+ .game-dialog{padding:26px 22px;gap:15px}
+ .game-dialog [data-slot=dialog-title]{font-size:23px;padding-right:32px}
+ .close-dialog{right:17px;top:20px}
+ .game-dialog.welcome-stage{display:flex;padding:16px 18px;gap:10px;width:calc(100vw - 20px)}
+ .welcome-masthead{padding-left:35%;min-height:134px}
+ .welcome-scene{display:block;position:static}
+ .welcome-host{position:absolute;left:15px;top:15px;width:33%;height:132px}
+ .welcome-host>.spine-art{inset:0;width:100%;height:100%}
+ .welcome-host>span{display:none}
+ .welcome-features{display:grid;grid-template-columns:1fr;gap:8px}
+ .welcome-feature{min-height:99px}
+ .welcome-vignette{height:84px}
+ .welcome-footer{padding:4px 0 0;gap:10px}
+ .game-dialog.bonus-dialog{padding:26px 20px;gap:10px}
+ .bonus-dialog [data-slot=dialog-title],.result-dialog [data-slot=dialog-title]{padding:0}
+ .hatch-eggs{--egg-size:82px;gap:8px 12px}
+ .golden-hatch{gap:12px}.hatch-counter strong{font-size:40px}
+}
+@media(orientation:portrait) and (max-height:640px){
+ .game-shell{--deck-height:125px;--portrait-reserve:164px}
+ .playground{bottom:calc(164px + env(safe-area-inset-bottom) + var(--session-offset))}
+ .game-header{height:calc(100svh - 164px - (var(--scene-width) - 36px) * .6 - 78px)}
+ .game-stage>.controls{grid-template-columns:56px 34px minmax(0,1fr) 58px 30px;grid-template-rows:36px 58px;padding:9px 14px;gap:6px}
+ .money>b,.bet-value{font-size:17px;line-height:22px}.money>span{font-size:8px}.bet-controls{height:22px}
+ .controls .buy-button{width:56px;height:45px}.buy-button>span{font-size:7px}
+ .controls .hud-menu{width:34px;height:40px;padding:9px}
+ .controls .spin-button{width:56px;height:56px;padding:9px}
+ .controls .round-button{width:28px;height:25px;padding:5px 6px}
+ .hero-spot{height:min(27svh,calc(var(--scene-width) * .53),var(--host-space))}
+ .game-dialog.welcome-stage{padding:12px 16px;gap:8px}
+ .welcome-masthead{min-height:110px}.welcome-host{height:115px}
+ .welcome-feature{min-height:83px}.welcome-vignette{height:72px}
+ .game-dialog.bonus-dialog{padding:24px 18px;gap:8px}
+ .hatch-eggs{--egg-size:64px;gap:6px 10px}
+ .egg-award{font-size:27px}.golden-hatch{gap:10px}
+}
+@media(orientation:landscape) and (max-height:300px){
+ .game-shell{--u:min(calc(100vw / 1200),calc((100svh - var(--dock-reserve) - var(--session-offset)) / 620));--deck-width:calc(100vw - 16px);--deck-height:66px;--deck-bottom:16px}
+ .game-stage{margin-bottom:calc(var(--dock-reserve) + var(--session-offset))}
+ .game-header .game-logo{width:calc(310 * var(--u));height:calc(112 * var(--u));top:0}
+ .edition,.demo-label{font-size:5px;padding:3px 4px;letter-spacing:.3px}
+ .reel-caption{font-size:5px;letter-spacing:0;padding:0 4px}.reel-caption strong{font-size:6px}.reel-caption>span:last-child{font-size:5px}
+ .bonus-total small{font-size:5px}.bonus-total b{font-size:7px}
+ .reel-frame{padding:calc(14 * var(--u));border-radius:6px}.reels{border-radius:4px}
+ .status-message{font-size:6px}.status-message>output{padding:2px 6px}.status-message .win-meter-title{font-size:7px}.status-message .win-meter>strong{font-size:13px}
+ .multiplier{font-size:12px}.sticky-dot{font-size:5px}.crow-bubble{font-size:6px;padding:3px}
+ .game-stage>.controls{grid-template-columns:40px 22px minmax(48px,1fr) minmax(62px,1fr) 34px 22px;gap:5px;padding:4px 12px;border-radius:12px}
+ .controls .buy-button{width:40px;height:32px;padding:1px 2px;border-radius:5px}
+ .controls .buy-button>.ui-icon{width:18px;height:18px}.buy-button>span{font-size:5px;letter-spacing:.1px}
+ .controls .hud-menu{width:22px;height:30px;padding:6px}
+ .money{gap:2px}.money>span{font-size:6px;line-height:8px;letter-spacing:.4px}.money>b,.bet-value{font-size:12px;line-height:15px}
+ .bet-controls{height:15px}.money.bet{padding-right:20px}.bet-adjust{height:30px}
+ .controls .bet-adjust button{width:20px;height:15px;padding:4px 6px}
+ .controls .spin-button{width:34px;height:34px;padding:6px;box-shadow:inset 0 0 0 2px #082f36}
+ .quick-controls{height:32px;gap:0}.controls .round-button{width:22px;height:16px;padding:2px 5px}
+ .game-stage>.game-bottom{width:calc(var(--deck-width) - 24px);font-size:5px;height:10px;bottom:3px;letter-spacing:0}.game-bottom .ui-icon{width:9px;height:9px}
+ .game-dialog{padding:18px 22px;gap:10px;max-height:calc(100svh - 12px)}
+ .game-dialog [data-slot=dialog-title]{font-size:20px;line-height:23px}
+ .close-dialog{top:12px;right:16px;width:30px;height:30px;padding:8px}
+ .game-dialog.welcome-stage{display:flex;padding:6px 10px;gap:3px}
+ .welcome-masthead{padding:0;min-height:29px}.welcome-host{display:none}.welcome-scene{display:block}.welcome-features{padding:0;gap:5px}
+ .welcome-feature{min-height:116px;padding:5px 7px 8px}.welcome-vignette{height:56px}
+ .welcome-footer{padding:0;gap:3px}.welcome-enter{min-height:26px;padding:4px 15px}
+ .game-dialog.bonus-dialog{padding:15px 18px;gap:4px}
+ .bonus-dialog [data-slot=dialog-title]{font-size:18px}.bonus-dialog [data-slot=dialog-description]{font-size:9px}
+ .hatch-eggs{--egg-size:44px;grid-template-columns:repeat(9,minmax(0,1fr));width:100%;gap:3px;padding:4px 0}
+ .egg-award{font-size:16px}.golden-hatch{gap:5px}.hatch-counter strong{font-size:25px}
+ .golden-hatch>.primary-button{min-height:27px;padding:5px 15px;font-size:9px}.golden-hatch>p{font-size:8px}
+}
+
+.hud-portrait-surface{display:none;position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+@media(orientation:landscape){.game-stage>.controls{padding-left:calc(var(--deck-height) * .8);padding-right:calc(var(--deck-height) * .8)}.game-stage>.game-bottom{width:calc(var(--deck-width) - var(--deck-height) * 1.6)}}
+@media(orientation:portrait){.hud-surface{display:none}.hud-portrait-surface{display:block}}
+@media(orientation:portrait){.welcome-feature h2{font-size:15px}.welcome-feature p{font-size:13px;line-height:1.4}}
+@media(orientation:portrait) and (max-height:640px){.welcome-feature h2{font-size:13px}.welcome-feature p{font-size:12px;line-height:1.35}}
+.hatch-counter strong{animation:counter-tick .3s both}
+@keyframes counter-tick{0%{transform:scale(1.10)}100%{transform:scale(1)}}
+
+.fitted-amount{display:inline-block;white-space:nowrap;vertical-align:baseline;line-height:inherit}
+.money>b,.controls .bet-value{max-width:100%;width:100%;min-width:0}
+.bet-controls{width:100%;min-width:0}
+.controls .bet-value{text-align:inherit}
+.replay-cost>b,.purchase-price>strong,.bonus-total>b{display:block;min-width:0;max-width:100%;width:100%}
+.purchase-price>span{flex-shrink:0;max-width:40%}
+.purchase-price>strong{text-align:right}
+.reel-caption .bonus-total{max-width:30%;min-width:0;text-align:right}
+.status-message .win-meter{grid-template-columns:minmax(0,1fr) minmax(0,2fr) minmax(0,1fr)}
+.status-message .win-meter>strong,.result-meter .win-meter>strong{width:100%;min-width:0;max-width:100%}
+.error-dialog [data-slot=dialog-description]{min-height:0;overflow:auto}
+@media(orientation:landscape) and (max-height:500px){
+ .game-dialog.result-dialog{display:grid;width:min(640px,calc(100vw - 24px));max-width:640px;height:min(340px,calc(100svh - 28px));grid-template-columns:38% minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto;gap:10px 18px;padding:24px}
+ .result-dialog>[data-slot=dialog-title]{grid-column:2;grid-row:1;font-size:24px;padding:0}
+ .result-dialog>[data-slot=dialog-description]{grid-column:2;grid-row:2;font-size:13px}
+ .result-dialog>.spine-art{grid-column:1;grid-row:1/5;width:100%;height:100%;margin:0}
+ .result-dialog>.result-meter{grid-column:2;grid-row:3;align-self:center}
+ .result-dialog>.primary-button{grid-column:2;grid-row:4;min-height:40px;padding:9px 18px;font-size:14px}
+ .result-meter .win-meter{min-height:0}
+}
+@media(orientation:landscape) and (max-height:300px){
+ .game-dialog.result-dialog{height:calc(100svh - 16px);padding:16px 20px;gap:6px 12px;grid-template-columns:34% minmax(0,1fr)}
+ .result-dialog>[data-slot=dialog-title]{font-size:18px;line-height:21px}
+ .result-dialog>[data-slot=dialog-description]{font-size:10px;line-height:14px}
+ .result-meter .win-meter{gap:5px}
+ .result-meter .win-meter>strong{font-size:24px}
+ .result-meter .win-meter-title{font-size:10px}
+ .result-dialog>.primary-button{min-height:30px;padding:6px 12px;font-size:11px}
+ .error-dialog>.primary-button{min-height:34px;font-size:12px;padding:8px 14px}
+}
+
+
+.error-dialog .error-reference{font:600 11px/1.3 AlphaUI,serif;letter-spacing:.035em;color:#d5bd8e;overflow-wrap:anywhere}

@@ -1,0 +1,113 @@
+/* A clear cartoon stage: the scene carries the controls, with no separate HUD box. */
+.control-deck { border: 0; border-radius: 0; background: none; box-shadow: none; color: #fff; }
+.deck-balance { border: 0; padding-left: 0; }
+.deck-money > span, .deck-bet-value small { color: #e4f4dd; text-shadow: 0 1px 3px #052c27; }
+.deck-amount, .deck-win > .win-meter, .control-deck .deck-bet-value { color: #fff; text-shadow: 0 2px 5px #062d30; }
+.deck-win > .win-meter { font-size: 34px; }
+.deck-buy > span { color: #fff5b6; text-shadow: 0 2px 4px #073b32; }
+.control-deck .deck-tool > .ui-icon { width: 78%; height: 78%; margin: 11%; }
+.control-deck .deck-step > .ui-icon { width: 92%; height: 92%; margin: 4%; }
+.control-deck .deck-spin { filter: drop-shadow(0 3px 4px #083b4b70); }
+.deck-spin > span { display: none; }
+.deck-tool.is-active { outline-color: #ffe383; }
+.reels { background: #064c49; box-shadow: inset 0 5px 14px #012d3077; }
+.reel-bed-art { opacity: .45; }
+.reel + .reel { box-shadow: inset 1px 0 #b8f5df14; }
+.symbol + .symbol { box-shadow: none; }
+.symbol.winning .cell-highlight { background: #ffe76620; border: 1px solid #ffe7a27a; box-shadow: inset 0 0 22px #ffcc5829; }
+.game-dialog [data-slot=dialog-title], .feature-dialog .feature-heading [data-slot=dialog-title] { color: #fff2bc; }
+.game-shell:after { background: linear-gradient(0deg, #04292bc9, #04292b40 14%, transparent 26%); }
+
+@media (orientation: landscape) {
+ .game-shell { --deck-height: 86px; --deck-bottom: 16px; --deck-width: min(1480px, calc(100vw - 38px)); --field-width: min(56vw, calc((100svh - 140px - var(--session-offset)) * 1.64)); --field-height: calc(var(--field-width) * .6 + 10px); --u: min(1.4px, calc(100vw / 1200)); align-items: flex-start; }
+ .game-stage { width: 100vw; max-width: none; height: 100svh; margin: 0; padding: 0; }
+ .playground { top: calc(12px + max(0px, (100svh - var(--deck-height) - var(--deck-bottom) - var(--session-offset) - var(--field-height) - 54px) / 2)); left: 50%; width: var(--field-width); height: calc(var(--field-height) + 22px); transform: translateX(-50%); }
+ .reel-area { height: 100%; grid-template-rows: 22px var(--field-height); }
+ .reel-frame { padding: 12px; border-radius: 16px; }
+ .hero-spot { --hero-width: min(440px, calc((100vw - var(--field-width)) / 2 - 8px)); right: calc(100% + 4px); bottom: -4px; width: var(--hero-width); height: calc(var(--hero-width) * 760 / 680); max-height: calc(100% - 110px); }
+ .game-header { inset: 14px 12px auto; width: calc((100vw - var(--field-width)) / 2 - 20px); height: 120px; }
+ .game-header .game-logo { left: 0; top: 0; transform: none; width: 100%; height: min(120px, calc((100vw - var(--field-width)) * .3)); }
+ .game-header .demo-label { position: fixed; top: 12px; right: 12px; font-size: 9px; }
+ .control-deck { grid-template-columns: 44px 74px minmax(104px,1fr) minmax(140px,1.3fr) minmax(154px,1fr) 86px 44px; gap: 18px; padding: 0 12px; }
+ .control-deck .deck-tool { width: 44px; height: 44px; }
+ .control-deck .deck-spin { width: 86px; height: 86px; }
+ .control-deck .deck-utilities > .deck-tool { width: 38px; height: 38px; }
+ .deck-utilities { gap: 2px; }
+ .deck-money > span { font-size: 11px; }
+ .deck-bet-input { grid-template-columns: 32px minmax(0,1fr) 32px; gap: 5px; }
+ .control-deck .deck-step { width: 32px; height: 32px; }
+ .deck-amount, .control-deck .deck-bet-value { font-size: 25px; }
+ .deck-win { text-align: center; align-items: center; }
+ .deck-win > .win-meter { text-align: center; font-size: 36px; }
+ .deck-buy { flex-direction: column; justify-content: center; gap: 3px; text-align: center; height: 80px; }
+ .deck-buy > .ui-icon { width: 31px; height: 38px; }
+ .deck-buy > span { font-size: 10px; line-height: 1; }
+ .deck-buy br { display: none; }
+ .game-stage > .game-bottom { width: calc(var(--deck-width) - 24px); bottom: 2px; font-size: 8px; }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+ .game-shell { --deck-height: 64px; --deck-bottom: 13px; --field-width: min(58vw, calc((100svh - 112px - var(--session-offset)) * 1.64)); }
+ .playground { top: calc(5px + max(0px, (100svh - var(--deck-height) - var(--deck-bottom) - var(--session-offset) - var(--field-height) - 40px) / 2)); }
+ .reel-caption { font-size: 8px; }.reel-caption strong { font-size: 11px; }
+ .control-deck { grid-template-columns: 30px 55px minmax(80px,1fr) minmax(90px,1.2fr) minmax(123px,1fr) 62px 32px; gap: 8px; padding: 0 5px; }
+ .control-deck .deck-tool { width: 32px; height: 32px; }.control-deck .deck-spin { width: 62px; height: 62px; }
+ .control-deck .deck-utilities > .deck-tool { width: 30px; height: 30px; }
+ .deck-bet-input { grid-template-columns: 26px minmax(0,1fr) 26px; gap: 3px; }
+ .control-deck .deck-step { width: 26px; height: 26px; }
+ .deck-amount, .control-deck .deck-bet-value { font-size: 20px; }.deck-win > .win-meter { font-size: 27px; }
+ .deck-money > span { font-size: 9px; }.deck-buy { height: 60px; }.deck-buy > .ui-icon { width: 24px; height: 29px; }
+ .hero-spot { max-height: calc(100% - 65px); }.game-header { top: 9px; height: 75px; }
+}
+
+@media (orientation: landscape) and (max-height: 300px) {
+ .game-shell { --deck-height: 44px; --deck-bottom: 1px; --deck-width: calc(100vw - 12px); --field-width: min(58vw, calc((100svh - 72px - var(--session-offset)) * 1.64)); }
+ .playground { top: 2px; height: calc(var(--field-height) + 12px); }.reel-area { grid-template-rows: 12px var(--field-height); }.reel-frame { padding: 6px; }
+ .reel-caption strong { font-size: 7px; }.reel-caption > span { display: none; }
+ .control-deck { grid-template-columns: 28px minmax(66px,1fr) minmax(66px,1fr) minmax(64px,.85fr) 44px; gap: 5px; padding: 0; }
+ .deck-menu { grid-column: 1; }.deck-buy, .deck-utilities { display: none; }.deck-balance { grid-column: 2; }.deck-win { grid-column: 3; }.deck-bet { grid-column: 4; }.control-deck .deck-spin { grid-column: 5; width: 44px; height: 44px; }
+ .deck-money > span { font-size: 7px; }.deck-amount, .control-deck .deck-bet-value { font-size: 14px; }.deck-win > .win-meter { font-size: 18px; }
+ .deck-bet-input { grid-template-columns: 1fr; height: 27px; }.control-deck .deck-step { display: none; }.control-deck .deck-bet-value { height: 27px; }
+ .hero-spot { bottom: -3px; max-height: calc(100% - 38px); }.game-header { inset: 4px 6px auto; }.game-header .game-logo { height: 36px; }.game-header .demo-label { font-size: 6px; top: 5px; right: 5px; }
+ .game-stage > .game-bottom { display: none; }
+}
+
+@media (orientation: portrait) {
+ .game-shell { --mobile-inner: calc(var(--mobile-width) - 8px); --mobile-frame-pad: 6px; --mobile-deck-rows: 40px 76px; --deck-height: 128px; --mobile-deck-gap: 6px; --mobile-spin: 76px; }
+ .game-stage { padding-left: 4px; padding-right: 4px; }
+ .control-deck { grid-template-columns: 44px 44px minmax(76px,1fr) 44px 44px; grid-template-rows: 40px 76px; gap: 6px; padding: 3px 8px; }
+ .deck-balance { grid-area: 1 / 1 / 2 / 3; }.deck-win { grid-area: 1 / 3 / 2 / 4; align-items: center; text-align: center; }.deck-bet { grid-area: 1 / 4 / 2 / 6; }
+ .deck-money { gap: 2px; }.deck-money > span { font-size: 9px; line-height: 11px; letter-spacing: .6px; }
+ .deck-amount, .deck-win > .win-meter { font-size: clamp(19px,5.8vw,25px); }.deck-win > .win-meter { text-align: center; }
+ .deck-bet-input { display: block; height: 28px; }.control-deck .deck-step { display: none; }
+ .control-deck .deck-bet-value { height: 44px; min-height: 44px; margin-top: -8px; padding-top: 5px; font-size: 22px; }.deck-bet-value small { display: none; }
+ .deck-menu { grid-area: 2 / 1 / 3 / 2; }.deck-buy { grid-area: 2 / 2 / 3 / 3; flex-direction: column; justify-content: center; gap: 2px; width: 44px; height: 58px; text-align: center; }
+ .deck-buy > .ui-icon { flex: 0 0 29px; width: 23px; height: 29px; }.deck-buy > span { font-size: 9px; line-height: 10px; }.deck-buy br { display: none; }
+ .control-deck .deck-spin { grid-area: 2 / 3 / 3 / 4; }
+ .deck-utilities { grid-area: 2 / 4 / 3 / 6; justify-content: space-between; gap: 6px; }
+ .control-deck .replay-cost { grid-area: 2 / 2 / 3 / 3; font-size: 11px; }.control-deck .replay-cost > b { font-size: 17px; }
+ .game-bottom button { font-size: 9px; }.game-bottom > span { font-size: 8px; }
+ .game-shell:after { background: linear-gradient(0deg,#032d30e8, #032d3050 24%,transparent 43%); }
+}
+
+/* Separate hit areas from the compact raster glyphs. */
+@media (orientation: landscape) and (min-height: 301px) {
+ .control-deck .deck-step, .control-deck .deck-utilities > .deck-tool { position: relative; }
+ .control-deck .deck-step::after { content: ""; position: absolute; width: 44px; height: 44px; left: 50%; top: 50%; transform: translate(-50%,-50%); }
+}
+@media (orientation: landscape) and (min-height: 301px) and (max-height: 520px) {
+ .control-deck { grid-template-columns: 44px 55px minmax(75px,1fr) minmax(85px,1.2fr) minmax(117px,1fr) 62px 88px; gap: 6px; }
+ .control-deck .deck-menu, .control-deck .deck-utilities > .deck-tool { width: 44px; height: 44px; }
+ .deck-utilities { flex-direction: row; gap: 0; }
+}
+@media (orientation: landscape) and (max-height: 300px) {
+ .control-deck { grid-template-columns: 44px minmax(62px,1fr) minmax(62px,1fr) minmax(60px,.85fr) 44px; }
+ .control-deck .deck-menu { width: 44px; height: 44px; }
+ .control-deck .deck-bet-value { min-height: 44px; margin-top: -17px; }
+}
+.close-dialog { min-width: 44px; min-height: 44px; }
+@media (orientation: portrait) {
+ .hero-spot { width: 56%; height: min(var(--mobile-header), calc(var(--mobile-inner) * .56 * 760 / 680)); }
+ .feature-result-content { grid-template-columns: 46% minmax(0,1fr); height: min(220px, 48vw); gap: 8px; }
+ .feature-result-award .win-meter > strong { font-size: clamp(28px, 9vw, 37px); }
+}

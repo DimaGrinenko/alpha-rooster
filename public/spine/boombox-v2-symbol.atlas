@@ -1,0 +1,13 @@
+symbols-master-v25.webp
+size: 2048, 1536
+filter: Linear, Linear
+repeat: none
+skin-body
+bounds: 1544, 53, 496, 405
+offsets: 0, 0, 496, 405
+skin-speakerL
+bounds: 1544, 53, 496, 405
+offsets: 0, 0, 496, 405
+skin-speakerR
+bounds: 1544, 53, 496, 405
+offsets: 0, 0, 496, 405

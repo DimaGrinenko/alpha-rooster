@@ -1,0 +1,13 @@
+symbols-master-v25.webp
+size: 2048, 1536
+filter: Linear, Linear
+repeat: none
+skin-hair
+bounds: 620, 8, 296, 496
+offsets: 0, 0, 296, 496
+skin-head
+bounds: 620, 8, 296, 496
+offsets: 0, 0, 296, 496
+skin-torso
+bounds: 620, 8, 296, 496
+offsets: 0, 0, 296, 496

@@ -1,0 +1,13 @@
+symbols-master-v25.webp
+size: 2048, 1536
+filter: Linear, Linear
+repeat: none
+skin-body
+bounds: 80, 520, 351, 496
+offsets: 0, 0, 351, 496
+skin-leafL
+bounds: 80, 520, 351, 496
+offsets: 0, 0, 351, 496
+skin-leafR
+bounds: 80, 520, 351, 496
+offsets: 0, 0, 351, 496

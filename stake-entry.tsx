@@ -1,0 +1,14 @@
+import{createRoot}from'react-dom/client';
+import Game from'./components/game/Game';
+import'./app/globals.css';
+import'./app/redesign.css';
+import'./app/geometry.css';
+import'./app/feature-screens.css';
+import'./app/motion-polish.css';
+import'./app/premium.css';
+import'./app/cartoon-v18.css';
+import'./app/barn-v20.css';
+import'./app/barn-v24.css';
+import'./app/barn-v26.css';
+import'./app/bonus-result-v26.css';
+createRoot(document.getElementById('root')!).render(<Game/>);

@@ -1,0 +1,72 @@
+hero-body-v15.webp
+size: 1254, 1254
+filter: Linear, Linear
+repeat: none
+hero
+bounds: 0, 0, 1254, 1254
+offsets: 0, 0, 1254, 1254
+
+hero-arms-v15.webp
+size: 1536, 1024
+filter: Linear, Linear
+repeat: none
+upperL
+bounds: 22, 72, 710, 460
+offsets: 0, 0, 710, 460
+upperR
+bounds: 814, 72, 709, 460
+offsets: 0, 0, 709, 460
+foreL
+bounds: 31, 641, 685, 288
+offsets: 0, 0, 685, 288
+foreR
+bounds: 31, 641, 685, 288
+offsets: 0, 0, 685, 288
+
+crate-props-v15.webp
+size: 1536, 1024
+filter: Linear, Linear
+repeat: none
+crate
+bounds: 40, 90, 445, 375
+offsets: 0, 0, 445, 375
+broken
+bounds: 539, 89, 477, 363
+offsets: 0, 0, 477, 363
+plank
+bounds: 1050, 175, 447, 207
+offsets: 0, 0, 447, 207
+splinter
+bounds: 137, 622, 242, 230
+offsets: 0, 0, 242, 230
+dust
+bounds: 510, 574, 500, 386
+offsets: 0, 0, 500, 386
+flowers
+bounds: 1035, 650, 477, 291
+offsets: 0, 0, 477, 291
+
+hero-costume-v24.webp
+size: 1254, 1254
+filter: Linear, Linear
+repeat: none
+heroClosedArt
+bounds: 0, 0, 1254, 1254
+offsets: 0, 0, 1254, 1254
+
+crate-props-v26.webp
+size: 1536, 1024
+filter: Linear, Linear
+repeat: none
+crateWoodV26
+bounds: 40, 90, 445, 375
+offsets: 0, 0, 445, 375
+brokenWoodV26
+bounds: 539, 89, 477, 363
+offsets: 0, 0, 477, 363
+plankWoodV26
+bounds: 1050, 175, 447, 207
+offsets: 0, 0, 447, 207
+splinterWoodV26
+bounds: 126, 606, 248, 244
+offsets: 0, 0, 248, 244

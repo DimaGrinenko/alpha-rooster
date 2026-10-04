@@ -1,0 +1,142 @@
+/* Illustrated farm signs share a raster frame; content keeps its own geometry. */
+.feature-art{pointer-events:none}
+.game-dialog.feature-dialog{isolation:isolate;background:transparent;border:0;box-shadow:none;color:#fff2cf;overflow:hidden;padding:36px 42px 32px;gap:16px;max-height:calc(100svh - 24px)}
+.feature-backdrop{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.feature-button{position:relative;isolation:isolate;display:grid;place-items:center;flex-shrink:0;width:280px;height:64px;max-width:100%;padding:13px 30px;color:#fff8d7;background:none;border:0;font:24px/1 AlphaUI,Arial,sans-serif;letter-spacing:1px;text-shadow:0 2px 2px #710e1b;cursor:pointer;transition:transform .18s,filter .18s}
+.feature-button>.feature-art{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.feature-button:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.13)}
+.feature-button:active:not(:disabled){transform:translateY(1px)}
+.feature-button:disabled{filter:saturate(.45);opacity:.58;cursor:default}
+.feature-button:focus-visible,.bonus-medallion:focus-visible{outline:3px solid #fff3b5;outline-offset:3px}
+.feature-button{border-radius:999px}
+.buy-dialog.feature-dialog>[data-slot=dialog-title]{text-align:center}
+.feature-heading{text-align:center;flex-shrink:0}
+.feature-dialog .feature-heading [data-slot=dialog-title]{font:38px/1.05 AlphaUI,Arial,sans-serif;color:#ffe59b;letter-spacing:1px;text-shadow:0 3px #75200f;padding:0;margin:0 0 8px}
+.feature-dialog .feature-heading [data-slot=dialog-description]{color:#f8d9b8;font-size:14px;line-height:1.4;margin:0}
+.game-dialog.welcome-v12{width:min(1020px,calc(100vw - 24px));max-width:1020px;height:min(580px,calc(100svh - 24px));display:grid;grid-template-rows:100px minmax(0,1fr) 84px;gap:8px}
+.intro-header{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.intro-logo{width:250px;height:92px;flex-shrink:0}
+.feature-dialog .intro-header [data-slot=dialog-description]{font:12px/18px AlphaUI,Arial,sans-serif;letter-spacing:2px;color:#f8d7ab;margin:0}
+.intro-content{display:grid;grid-template-columns:24% minmax(0,1fr);gap:15px;min-height:0}
+.intro-host{min-height:0;position:relative}
+.intro-host>.spine-art{width:100%;height:100%}
+.intro-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));min-height:0;gap:14px;align-items:center}
+.intro-fact{min-width:0;min-height:0;text-align:center;padding:10px 5px;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.intro-fact+.intro-fact{border-left:1px solid #ffce7533;padding-left:14px}
+.intro-fact .welcome-vignette{height:clamp(92px,20svh,162px);margin:0 0 12px}
+.intro-copy h2{font:23px/1.05 AlphaUI,Arial,sans-serif;color:#ffe79e;text-shadow:0 2px #742b0d;margin:0 0 8px;letter-spacing:.4px}
+.intro-copy p{font-size:13px;line-height:1.5;color:#ffe9d2;margin:0}
+.intro-footer{display:flex;flex-direction:column;align-items:center;gap:7px;justify-content:center}
+.intro-footer small{font-size:9px;line-height:13px;color:#debfa9;text-align:center}
+.game-dialog.bonus-v12{width:min(780px,calc(100vw - 24px));max-width:780px}
+.hatch-v12.golden-hatch{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:12px 24px;align-items:center;min-height:0;isolation:isolate}
+.hatch-v12 .hatch-halo{opacity:.16;inset:5% 5%;width:90%;height:80%;z-index:-1}
+.hatch-v12 .hatch-eggs{--egg-size:94px;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:9px;padding:4px;margin:0}
+.hatch-v12 .hatch-award{min-width:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+.hatch-v12 .hatch-counter{flex-direction:column;gap:3px;line-height:1;text-align:center}
+.hatch-counter>small{font:12px/1.3 AlphaUI,Arial,sans-serif;letter-spacing:2px;color:#f8d8b2}
+.hatch-v12 .hatch-counter>strong{font:88px/.95 AlphaUI,Arial,sans-serif;color:#ffe897;text-shadow:0 4px #8e3816,0 8px 18px #21031780}
+.hatch-v12 .hatch-counter>span{font:24px/1.1 AlphaUI,Arial,sans-serif;letter-spacing:1px;color:#ffeabd}
+.hatch-v12 .hatch-progress{gap:5px;margin:0;width:auto;max-width:100%;min-width:0}
+.hatch-v12 .hatch-progress>span{flex:0 0 6px;width:6px;height:6px;background:#f2d7b536}
+.hatch-v12 .hatch-progress>.revealed{background:#ffe494}
+.hatch-wild{display:flex;align-items:center;gap:8px;width:100%;justify-content:center}
+.hatch-wild>.spine-art{width:70px;height:74px;flex-shrink:0}
+.hatch-wild>p{font-size:12px;line-height:1.5;text-align:left;color:#f5d6be;margin:0}
+.hatch-v12>.feature-button{grid-column:1/-1;justify-self:center;margin-top:6px}
+.game-dialog.result-v12{display:flex;flex-direction:column;align-items:stretch;width:min(760px,calc(100vw - 24px));max-width:760px}
+.feature-result-content{display:grid;grid-template-columns:42% minmax(0,1fr);height:min(290px,42svh);gap:18px;min-height:0}
+.feature-result-content>.spine-art{width:100%;height:100%;margin:0}
+.feature-result-award{display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:0;gap:14px}
+.feature-result-award>.feature-eyebrow{font-size:12px;letter-spacing:3px;color:#f5d9bc}
+.feature-result-award>.win-meter{display:flex;flex-direction:column;align-items:center;position:relative;isolation:isolate;width:100%;gap:10px;min-height:0;text-align:center}
+.feature-result-award .win-meter>strong{width:100%;min-width:0;font:54px/1.05 AlphaUI,Arial,sans-serif;color:#ffe698;text-shadow:0 4px #7f2d16}
+.feature-result-award .win-meter-title{font:23px/1.1 AlphaUI,Arial,sans-serif;letter-spacing:1px;color:#fff1c2}
+.feature-result-award .win-meter-burst{opacity:.22}
+.result-v12>.feature-button{align-self:center}
+.game-dialog.buy-dialog.feature-dialog{width:min(560px,calc(100vw - 24px));max-width:560px;text-align:center}
+.buy-dialog.feature-dialog>[data-slot=dialog-title]{font:32px/1.1 AlphaUI,Arial,sans-serif;padding:0 30px;margin:0;color:#ffe69b}
+.buy-dialog .purchase-feature{display:grid;grid-template-columns:140px minmax(0,1fr);grid-template-rows:auto auto auto;column-gap:16px;align-items:center;text-align:left;padding:0;border:0;background:none;margin:0 0 12px}
+.buy-dialog .purchase-feature>.spine-art{grid-column:1;grid-row:1/4;width:140px;height:155px}
+.buy-dialog .purchase-feature>.feature-eyebrow{grid-column:2;grid-row:1;font-size:9px;letter-spacing:2px;color:#eec4a0;align-self:end}
+.buy-dialog .purchase-feature>h2{grid-column:2;grid-row:2;font:27px/1.05 AlphaUI,Arial,sans-serif;margin:5px 0;color:#ffe39a}
+.buy-dialog .purchase-feature>p{grid-column:2;grid-row:3;font-size:12px;line-height:1.45;color:#f6d8be;align-self:start}
+.buy-dialog .purchase-price,.buy-dialog .purchase-bet{background:#270b172e;border-radius:8px;padding:10px 14px;margin:8px 0;color:#f6dbba}
+.buy-dialog .purchase-price>span{color:#f3cbb0}.buy-dialog .purchase-price>strong{color:#ffe89d;font-family:AlphaUI,Arial,sans-serif}
+.buy-dialog .purchase>.feature-button{width:100%;margin:14px auto 0}
+.buy-dialog .game-select{background:#381320;border-color:#e9ad5752;color:#ffe7c0}
+/* Bonus button and the relocated win counter stay inside the control deck. */
+.controls .buy-button.bonus-medallion{height:64px;gap:1px;padding:0;border:0;border-radius:0;background:none;overflow:visible}
+.bonus-medallion>.feature-art{width:47px;height:47px;transition:transform .25s}
+.bonus-medallion:hover:not(:disabled)>.feature-art{transform:rotate(-6deg) scale(1.06)}
+.bonus-medallion>span{font:9px/11px AlphaUI,Arial,sans-serif;color:#ffe59d;letter-spacing:.5px;text-shadow:0 1px #24160e}
+.money.hud-win{display:flex;min-width:0;position:relative;align-items:flex-start}
+.hud-win>.win-meter{display:block;width:100%;min-height:0;font:23px/27px AlphaUI,Arial,sans-serif;text-align:left}
+.hud-win .win-meter>strong{display:block;min-width:0;width:100%;font:inherit;letter-spacing:0;color:#ffe294}
+.hud-win .win-meter-burst{display:none}
+.hud-win .win-meter-title{display:none;position:absolute;left:0;top:0;font:10px/12px AlphaUI,Arial,sans-serif;letter-spacing:1px}
+.hud-win:has(.win-tier-1,.win-tier-2,.win-tier-3)>span{visibility:hidden}
+.hud-win .win-tier-1 .win-meter-title,.hud-win .win-tier-2 .win-meter-title,.hud-win .win-tier-3 .win-meter-title{display:block}
+.hud-notice{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:8px 16px;background:#7e1938;color:#ffe8c1;border-radius:8px;font:13px/1.2 AlphaUI,Arial,sans-serif;pointer-events:none;white-space:nowrap}
+@media(orientation:landscape) and (max-width:1050px){.controls .buy-button.bonus-medallion{height:58px}.bonus-medallion>.feature-art{width:41px;height:41px}.hud-win>.win-meter{font-size:20px;line-height:24px}}
+@media(orientation:landscape) and (max-height:500px){
+ .game-stage>.controls{grid-template-columns:62px 32px minmax(70px,1fr) minmax(65px,1fr) minmax(95px,1fr) 48px 28px;gap:9px}
+ .controls .money.hud-win{display:flex}.controls .buy-button.bonus-medallion{height:48px}.bonus-medallion>.feature-art{width:34px;height:34px}.bonus-medallion>span{font-size:7px;line-height:9px}
+ .hud-win>.win-meter{font-size:17px;line-height:21px}
+ .game-dialog.feature-dialog{padding:24px 30px 22px;gap:10px}
+ .game-dialog.welcome-v12{grid-template-rows:65px minmax(0,1fr) 62px;height:calc(100svh - 24px)}
+ .intro-logo{width:170px;height:60px}.feature-dialog .intro-header [data-slot=dialog-description]{font-size:9px;line-height:12px}.intro-copy h2{font-size:18px}.intro-copy p{font-size:10px}.intro-fact .welcome-vignette{height:88px;margin-bottom:8px}
+ .feature-button{height:48px;font-size:18px;width:235px;padding:10px 22px}.intro-footer{gap:3px}.intro-footer small{font-size:7px;line-height:10px}
+ .feature-dialog .feature-heading [data-slot=dialog-title]{font-size:28px;margin-bottom:4px}.feature-dialog .feature-heading [data-slot=dialog-description]{font-size:11px}
+ .hatch-v12 .hatch-eggs{--egg-size:66px;gap:4px}.hatch-v12 .hatch-counter>strong{font-size:68px}.hatch-v12 .hatch-counter>span{font-size:21px}.hatch-v12 .hatch-award{gap:7px}.hatch-wild>.spine-art{width:52px;height:55px}.hatch-wild>p{font-size:10px}
+ .feature-result-content{height:min(195px,44svh)}.feature-result-award .win-meter>strong{font-size:42px}.feature-result-award .win-meter-title{font-size:19px}
+ .buy-dialog .purchase-feature>.spine-art{height:95px;width:100px}.buy-dialog .purchase-feature{grid-template-columns:100px 1fr}.buy-dialog .purchase-feature>h2{font-size:22px}.buy-dialog .purchase-feature>p{font-size:10px}.buy-dialog .purchase-price,.buy-dialog .purchase-bet{padding:6px 12px}.buy-dialog .purchase>.feature-button{margin-top:8px}
+}
+@media(orientation:portrait){
+ .controls:has(.replay-cost) .money.hud-win{display:none}
+ .controls .money.hud-win{display:flex;grid-column:3;grid-row:2;align-items:center;align-self:center;gap:5px}
+ .hud-win>.win-meter{text-align:center;font-size:17px;line-height:21px}.hud-win .win-meter-title{width:100%;text-align:center;font-size:8px;line-height:11px}
+ .controls .buy-button.bonus-medallion{height:58px}.bonus-medallion>.feature-art{width:43px;height:43px}.bonus-medallion>span{font-size:7px;line-height:9px}
+ .game-dialog.feature-dialog{padding:25px 24px 23px;gap:14px;max-height:calc(100svh - 20px)}
+ .game-dialog.welcome-v12{height:auto;grid-template-rows:112px minmax(0,1fr) 74px;gap:8px}
+ .intro-header{padding-left:105px}.intro-logo{width:100%;height:87px}.feature-dialog .intro-header [data-slot=dialog-description]{font-size:9px;line-height:12px;letter-spacing:.6px}
+ .intro-content{display:contents}.intro-host{position:absolute;left:18px;top:22px;width:110px;height:133px}
+ .intro-facts{display:grid;grid-template-columns:1fr;gap:0}
+ .intro-fact{display:grid;grid-template-columns:88px minmax(0,1fr);gap:14px;text-align:left;padding:10px 0;align-items:center}
+ .intro-fact+.intro-fact{border-left:0;border-top:1px solid #ffce7533;padding-left:0}
+ .intro-fact .welcome-vignette{height:87px;width:88px;margin:0}.intro-copy h2{font-size:22px;margin-bottom:5px}.intro-copy p{font-size:12px;line-height:1.4}
+ .intro-footer{gap:5px}.intro-footer small{font-size:7px;line-height:11px}.feature-button{height:55px;font-size:21px;width:255px}
+ .feature-dialog .feature-heading [data-slot=dialog-title]{font-size:29px}.feature-dialog .feature-heading [data-slot=dialog-description]{font-size:12px}
+ .hatch-v12.golden-hatch{grid-template-columns:1fr;gap:12px}
+ .hatch-v12 .hatch-eggs{--egg-size:80px;gap:7px;width:min(300px,100%);justify-self:center}
+ .hatch-v12 .hatch-award{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;align-items:center}
+ .hatch-v12 .hatch-counter{grid-column:1;grid-row:1/3}.hatch-v12 .hatch-counter>strong{font-size:65px}.hatch-v12 .hatch-counter>span{font-size:20px}.hatch-counter>small{font-size:10px}
+ .hatch-v12 .hatch-progress{grid-column:2;grid-row:2;justify-content:center}.hatch-wild{grid-column:2;grid-row:1;flex-direction:column;gap:1px}.hatch-wild>.spine-art{width:52px;height:54px}.hatch-wild>p{font-size:10px;text-align:center}
+ .feature-result-content{grid-template-columns:40% minmax(0,1fr);height:240px;gap:10px}.feature-result-award .win-meter>strong{font-size:37px}.feature-result-award .win-meter-title{font-size:20px}.feature-result-award>.feature-eyebrow{font-size:9px;letter-spacing:2px}
+ .buy-dialog.feature-dialog>[data-slot=dialog-title]{font-size:27px}.buy-dialog .purchase-feature{grid-template-columns:100px minmax(0,1fr);gap:8px}.buy-dialog .purchase-feature>.spine-art{width:100px;height:132px}.buy-dialog .purchase-feature>h2{font-size:22px}.buy-dialog .purchase-feature>p{font-size:10px}
+}
+@media(orientation:portrait) and (max-height:650px){
+ .game-dialog.feature-dialog{padding:22px 21px;gap:10px}.game-dialog.welcome-v12{grid-template-rows:82px minmax(0,1fr) 62px;gap:5px}
+ .intro-header{padding-left:83px}.intro-logo{height:62px}.intro-host{width:92px;height:110px;top:13px;left:15px}
+ .intro-fact{grid-template-columns:67px minmax(0,1fr);gap:11px;padding:8px 0}.intro-fact .welcome-vignette{height:69px;width:67px}.intro-copy h2{font-size:19px}.intro-copy p{font-size:10px}
+ .feature-button{height:47px;font-size:18px}.intro-footer small{font-size:6px}.controls .buy-button.bonus-medallion{height:48px}.bonus-medallion>.feature-art{height:35px;width:35px}.hud-win>.win-meter{font-size:14px;line-height:18px}
+ .hatch-v12 .hatch-eggs{--egg-size:67px;gap:4px}.hatch-v12 .hatch-counter>strong{font-size:55px}.feature-dialog .feature-heading [data-slot=dialog-title]{font-size:25px}.feature-dialog .feature-heading [data-slot=dialog-description]{font-size:10px}.feature-result-content{height:202px}
+}
+@media(orientation:landscape) and (max-height:300px){
+ .game-stage>.controls{grid-template-columns:32px 16px minmax(46px,1fr) minmax(40px,1fr) minmax(56px,1fr) 30px 18px;gap:4px}
+ .controls .buy-button.bonus-medallion{width:32px;height:34px}.bonus-medallion>.feature-art{width:25px;height:25px}.bonus-medallion>span{font-size:5px;line-height:6px;letter-spacing:0}.controls .hud-menu{width:16px;padding:4px}.controls .spin-button{width:30px;height:30px;padding:5px}.controls .round-button{width:18px}
+ .hud-win>.win-meter{font-size:11px;line-height:15px}.hud-win .win-meter-title{font-size:6px;line-height:8px;letter-spacing:0}.hud-notice{font-size:9px;padding:5px 9px}
+ .game-dialog.feature-dialog{padding:15px 18px 13px;gap:5px;max-height:calc(100svh - 12px)}
+ .game-dialog.welcome-v12{grid-template-rows:29px minmax(0,1fr) 38px;gap:2px;height:calc(100svh - 12px)}
+ .intro-logo{width:110px;height:29px}.feature-dialog .intro-header [data-slot=dialog-description]{display:none}.intro-host{display:none}.intro-content{display:block;min-height:0}.intro-facts{height:100%;gap:7px}.intro-fact{padding:3px 0}.intro-fact+.intro-fact{padding-left:7px}.intro-fact .welcome-vignette{height:45px;margin-bottom:4px}.intro-copy h2{font-size:11px;margin-bottom:3px}.intro-copy p{font-size:7px;line-height:1.25}.intro-fact .welcome-mult{font-size:15px}
+ .feature-button{width:170px;height:29px;font-size:12px;padding:6px 14px}.intro-footer{gap:1px}.intro-footer small{font-size:5px;line-height:7px}
+ .feature-dialog .feature-heading [data-slot=dialog-title]{font-size:20px;line-height:22px;margin-bottom:2px}.feature-dialog .feature-heading [data-slot=dialog-description]{font-size:8px;line-height:11px}
+ .hatch-v12.golden-hatch{grid-template-columns:1.35fr 1fr;gap:4px 12px}.hatch-v12 .hatch-eggs{--egg-size:34px;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:1px;padding:0}.hatch-v12 .egg-award{font-size:15px}.hatch-v12 .hatch-counter>strong{font-size:38px}.hatch-v12 .hatch-counter>span{font-size:13px}.hatch-counter>small{font-size:7px;letter-spacing:1px}.hatch-v12 .hatch-award{gap:4px}.hatch-wild>.spine-art{width:27px;height:30px}.hatch-wild>p{font-size:7px;line-height:1.25}.hatch-v12 .hatch-progress{gap:3px}.hatch-v12 .hatch-progress>span{width:4px;height:4px}.hatch-v12>.feature-button{margin:0}
+ .feature-result-content{height:108px;grid-template-columns:35% minmax(0,1fr);gap:10px}.feature-result-award{gap:5px}.feature-result-award>.feature-eyebrow{font-size:7px;letter-spacing:1px}.feature-result-award .win-meter-title{font-size:15px}.feature-result-award .win-meter>strong{font-size:28px}
+ .buy-dialog.feature-dialog>[data-slot=dialog-title]{font-size:20px}.buy-dialog .purchase-feature{grid-template-columns:65px 1fr;margin-bottom:5px}.buy-dialog .purchase-feature>.spine-art{width:65px;height:66px}.buy-dialog .purchase-feature>.feature-eyebrow{font-size:6px;letter-spacing:1px}.buy-dialog .purchase-feature>h2{font-size:16px;margin:1px 0}.buy-dialog .purchase-feature>p{font-size:7px}.buy-dialog .purchase-price,.buy-dialog .purchase-bet{padding:3px 8px;margin:3px 0}.buy-dialog .purchase-price>span,.buy-dialog .purchase-bet>span{font-size:7px}.buy-dialog .purchase-price>strong{font-size:17px}.buy-dialog .game-select{height:25px;font-size:11px}.buy-dialog .purchase>.feature-button{margin-top:5px}
+}
+@media(prefers-reduced-motion:reduce){.feature-button,.bonus-medallion>.feature-art{transition:none}.feature-button:hover:not(:disabled),.bonus-medallion:hover:not(:disabled)>.feature-art{transform:none}}
+@media(orientation:landscape) and (max-height:300px){
+ .buy-dialog .purchase-feature>.spine-art{height:48px}
+ .buy-dialog .purchase-price>strong{line-height:20px}
+}

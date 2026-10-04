@@ -1,0 +1,25 @@
+symbols-master-v25.webp
+size: 2048, 1536
+filter: Linear, Linear
+repeat: none
+skin-comb
+bounds: 11, 8, 489, 496
+offsets: 0, 0, 489, 496
+skin-head
+bounds: 11, 8, 489, 496
+offsets: 0, 0, 489, 496
+skin-foreL
+bounds: 11, 8, 489, 496
+offsets: 0, 0, 489, 496
+skin-torso
+bounds: 11, 8, 489, 496
+offsets: 0, 0, 489, 496
+skin-upperL
+bounds: 11, 8, 489, 496
+offsets: 0, 0, 489, 496
+skin-foreR
+bounds: 11, 8, 489, 496
+offsets: 0, 0, 489, 496
+skin-upperR
+bounds: 11, 8, 489, 496
+offsets: 0, 0, 489, 496

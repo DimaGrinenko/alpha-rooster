@@ -1,0 +1,77 @@
+/* Warm brass, honey and cream retain the accepted frameless control geometry. */
+.control-deck{color:#ffe0a0}
+.deck-money>span,.deck-bet-value small{color:#e5ba71;text-shadow:0 1px 3px #241205}
+.deck-amount,.control-deck .deck-bet-value{color:#fff0ca;text-shadow:0 2px 4px #241205}
+.deck-win>.win-meter{color:#ffd16e;text-shadow:0 2px 3px #713710,0 0 14px #f8ad3330}
+.control-deck .ui-icon,.game-footer .ui-icon{filter:sepia(1) saturate(2.6) hue-rotate(350deg) brightness(.97) drop-shadow(0 2px 2px #35190490)}
+.control-deck .deck-buy>.ui-icon{filter:drop-shadow(0 2px 3px #35190490)}
+.deck-buy>span{color:#edc678;text-shadow:0 2px 3px #241205}
+.control-deck .deck-tool.is-active>.ui-icon{filter:sepia(1) saturate(4) hue-rotate(350deg) brightness(1.25) drop-shadow(0 0 5px #ecb34280)}
+@media(orientation:portrait){
+ .game-shell{--mobile-frame:calc((var(--mobile-inner) - 2 * var(--mobile-frame-pad)) * .86 + 2 * var(--mobile-frame-pad));--mobile-header:max(86px,calc(100svh - var(--mobile-safe-top) - var(--mobile-safe-bottom) - var(--mobile-board) - var(--deck-height) - var(--mobile-footer) - 3 * var(--mobile-gap)))}
+ .game-header .game-logo{left:5px;right:auto;top:32%;width:58%;height:clamp(70px,24vw,112px);transform:translateY(-50%)}
+ .hero-spot{left:auto;right:-4px;width:54%;height:min(var(--mobile-header),calc(var(--mobile-inner) * .54 * 760 / 680))}
+ .game-header .demo-label{top:8px;right:8px}
+}
+.hatch-v26 .hatch-counter>strong{font-family:AlphaDisplay,Arial,sans-serif}
+.hatch-v26 .hatch-egg{touch-action:manipulation}
+.hatch-v26 .hatch-instruction{min-height:1.3em}
+.hatch-v26 .hatch-halo{animation:harvest-halo 6s ease-in-out infinite}
+.hatch-v26.hatch-complete .hatch-counter{animation:harvest-collected .8s cubic-bezier(.2,.7,.2,1) both}
+.hatch-v26.hatch-complete .feature-button{animation:harvest-button .6s .5s ease-out both}
+@keyframes harvest-halo{0%,100%{opacity:.10;transform:scale(.94)}50%{opacity:.24;transform:scale(1.03)}}
+@keyframes harvest-collected{0%{transform:scale(.92)}42%{transform:scale(1.12)}70%{transform:scale(.97)}100%{transform:scale(1)}}
+@keyframes harvest-button{from{filter:brightness(1.6)}to{filter:brightness(1)}}
+@media(prefers-reduced-motion:reduce){.hatch-v26 .hatch-halo,.hatch-v26.hatch-complete .hatch-counter,.hatch-v26.hatch-complete .feature-button{animation:none}}
+/* A rounded cartoon display face and a warm slab serif replace condensed UI lettering. */
+.deck-amount,.deck-win>.win-meter strong,.control-deck .deck-bet-value,.feature-result-award .win-meter strong,.hatch-counter strong{font-family:AlphaDisplay,Arial,sans-serif;font-weight:400;letter-spacing:-.5px}
+.deck-money>span,.deck-buy>span,.deck-bet-value small{letter-spacing:.55px}
+.feature-heading [data-slot=dialog-title]{font-family:AlphaDisplay,Arial,sans-serif;font-weight:400;letter-spacing:.4px}
+.game-dialog,.feature-button{font-family:AlphaUI,Georgia,serif}
+/* Keep the CTA inside the 320px portrait cabinet's 219px content opening. */
+.hatch-v26>.feature-button{max-width:100%;min-width:0}
+.hatch-v26 .hatching .egg-whole{animation:harvest-egg-shake .24s ease-in-out both}
+@keyframes harvest-egg-shake{0%,100%{transform:rotate(0) scale(1)}28%{transform:rotate(-6deg) scale(1.025)}63%{transform:rotate(5deg) scale(1.035)}84%{transform:rotate(-2deg) scale(1.015)}}
+@media(prefers-reduced-motion:reduce){.hatch-v26 .hatching .egg-whole{animation:none}}
+@media(orientation:portrait){
+ .game-header .game-logo{top:12px;transform:none;translate:none}
+}
+@media(orientation:portrait) and (max-height:620px){
+ .game-shell{--mobile-frame:calc((var(--mobile-inner) - 2 * var(--mobile-frame-pad)) * .80 + 2 * var(--mobile-frame-pad));--mobile-header:max(74px,calc(100svh - var(--mobile-safe-top) - var(--mobile-safe-bottom) - var(--mobile-board) - var(--deck-height) - var(--mobile-footer) - 3 * var(--mobile-gap)))}
+}
+.barn-dialog .hatch-v26{min-width:0}
+.barn-dialog .hatch-v26>.feature-button{width:min(260px,100%);min-width:0;max-width:100%}
+.barn-dialog .hatch-v26 .hatch-eggs,.barn-dialog .hatch-v26 .hatch-award,.barn-dialog .hatch-v26 .hatch-wild{min-width:0;max-width:100%}
+@media(orientation:portrait){.barn-dialog .hatch-v26{grid-template-columns:minmax(0,1fr)}.barn-dialog .hatch-v26 .hatch-award{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.barn-dialog .hatch-v26 .hatch-counter>span{font-size:clamp(12px,3.8vw,17px);letter-spacing:.3px}}
+@media(orientation:landscape){.barn-dialog .hatch-v26{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}}
+@media(orientation:portrait){
+ .hero-spot{left:-4px;right:auto}
+ .game-header .game-logo{left:auto;right:5px}
+}
+.studio-preview-actions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+@media(orientation:landscape){
+ .game-dialog.bonus-v12.barn-dialog{width:min(840px,calc(100vw - 20px));max-width:840px;height:min(540px,calc(100svh - 24px));padding:28px 40px;gap:8px}
+ .bonus-v12 .barn-cabinet{display:none}.bonus-v12 .barn-compact-frame{display:block}
+ .bonus-v12 .hatch-v26{grid-template-rows:auto minmax(0,1fr) auto;gap:8px 24px}
+ .bonus-v12 .hatch-v26 .hatch-eggs{--egg-size:min(82px,12svh);grid-column:1;grid-row:2;gap:3px 12px}
+ .bonus-v12 .hatch-v26 .hatch-award{grid-column:2;grid-row:2;display:flex;flex-direction:column;gap:10px;justify-content:center}
+ .bonus-v12 .hatch-v26 .hatch-counter>strong{font-size:82px}
+ .bonus-v12 .hatch-v26 .hatch-wild{flex-direction:row}
+ .bonus-v12 .hatch-v26 .hatch-wild>p{font-size:11px;line-height:1.4}
+ .bonus-v12 .hatch-v26>.feature-button{grid-row:3}
+}
+@media(orientation:landscape) and (max-height:500px){
+ .game-dialog.bonus-v12.barn-dialog{padding:18px 28px}
+ .bonus-v12 .hatch-v26{gap:4px 16px}
+ .bonus-v12 .hatch-v26 .hatch-eggs{--egg-size:min(62px,12svh)}
+ .bonus-v12 .hatch-v26 .hatch-counter>strong{font-size:62px}
+}
+@media(orientation:landscape) and (max-height:300px){
+ .game-dialog.bonus-v12.barn-dialog{height:calc(100svh - 12px);padding:10px 20px;gap:3px}
+ .bonus-v12 .hatch-v26{grid-template-rows:minmax(0,1fr) auto;gap:3px 12px}
+ .bonus-v12 .hatch-v26 .hatch-eggs{--egg-size:31px;grid-row:1}
+ .bonus-v12 .hatch-v26 .hatch-award{grid-row:1;gap:3px}
+ .bonus-v12 .hatch-v26>.feature-button{grid-row:2;height:32px;min-height:32px}
+ .bonus-v12 .hatch-v26 .hatch-counter>strong{font-size:32px}
+ .bonus-v12 .hatch-v26 .hatch-wild>p{font-size:7px}
+}

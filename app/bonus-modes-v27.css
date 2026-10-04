@@ -1,0 +1,83 @@
+/* Feature variants share the existing illustrated barn cabinet and raster art. */
+.game-dialog.buy-dialog.feature-dialog.bonus-choice-dialog{width:min(920px,calc(100vw - 20px));max-width:920px;text-align:center;padding:30px 36px 26px}
+.bonus-choice-v27{display:flex;flex-direction:column;gap:12px;min-width:0}
+.bcv27-intro{font:15px/1.4 AlphaUI,serif;color:#f7dda1;margin:0}
+.bcv27-cards{border:0;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.bcv27-card{display:grid;grid-template-columns:18px 74px minmax(0,1fr);align-items:center;gap:8px;cursor:pointer;padding:10px;border:1px solid #a9854d;border-radius:9px;background:#173d2bd9;min-width:0;text-align:left;transition:border-color .2s,background-color .2s}
+.bcv27-card.selected{border-color:#ffe28a;background:#3e4522;box-shadow:inset 0 0 0 1px #ffe28a}
+.bcv27-card:focus-within{outline:3px solid #fff0ba;outline-offset:2px}.bcv27-card input{width:17px;height:17px;accent-color:#e7bd65}
+.bcv27-art{height:80px;display:block;min-width:0}.bcv27-art .spine-art{height:100%;width:100%}
+.bcv27-card-copy{display:flex;flex-direction:column;gap:5px;min-width:0}.bcv27-card-copy strong{font:clamp(15px,2vw,22px)/1.1 AlphaDisplay,serif;color:#ffe7a2}.bcv27-card-copy>span{font:12px/1.35 AlphaUI,serif;color:#fff3d8}.bcv27-card-copy small{font:10px/1.3 AlphaUI,serif;color:#e0be77;letter-spacing:.4px}
+.bcv27-card[data-feature=BARN_CASCADES].selected .bcv27-art{animation:bcv27-roam 3s ease-in-out infinite}.bcv27-card[data-feature=GOLDEN_COLLECT].selected .bcv27-art{animation:bcv27-expand 3s ease-in-out infinite}
+.bcv27-rules{padding:12px;margin:0;background:#18281ea6;border-radius:6px;text-align:left;font:14px/1.5 AlphaUI,serif;color:#ffedc7;min-height:74px}.bcv27-rules b{color:#ffdf86}
+.bcv27-bet .purchase-bet{display:flex;align-items:center;justify-content:center;gap:14px;margin:0;background:none;padding:0}
+.bcv27-cost{display:flex;align-items:center;justify-content:center;gap:20px;min-width:0;color:#ffe7a3}.bcv27-cost>span{font:11px/1.4 AlphaUI,serif;letter-spacing:.6px}.bcv27-cost>strong{min-width:0;max-width:60%;font:28px/1.2 AlphaDisplay,serif}
+.bonus-choice-v27>.feature-button{align-self:center;width:340px;max-width:100%;font-size:20px;margin:0}
+.bcv27-confirm{display:grid;grid-template-columns:130px minmax(0,1fr);gap:10px 20px;text-align:left;align-items:center}.bcv27-confirm>.spine-art{grid-row:1/5;width:130px;height:190px}.bcv27-confirm h2{font:25px/1.2 AlphaDisplay,serif;color:#ffe09a;margin:0}.bcv27-confirm p{font:14px/1.5 AlphaUI,serif;color:#fff0cc;margin:0}.bcv27-back{font:14px AlphaUI,serif;color:#ffe09a;text-decoration:underline;text-underline-offset:4px;justify-self:start;padding:8px 0;min-height:40px;background:none;border:0;cursor:pointer}
+.free-mode.feature-barn_frenzy .reel-caption>span:first-child{color:#bdeeff}.free-mode.feature-golden_harvest .reel-caption>span:first-child{color:#ffd15e}
+.symbol.roaming-wild:not(.locked)>.spine-art{animation:bcv27-wild-land calc(.75s / var(--feature-speed,1)) cubic-bezier(.16,.7,.2,1) both}.symbol.expanded-wild>.spine-art{animation:bcv27-reel-grow calc(.58s / var(--feature-speed,1)) cubic-bezier(.2,.75,.2,1) both}
+.scene-covered .symbol.roaming-wild>.spine-art,.scene-covered .symbol.expanded-wild>.spine-art{animation-play-state:paused}
+.symbol.expanded-wild .cell-highlight{opacity:.35;background:#eec05229;box-shadow:inset 2px 0 #f9dc88,inset -2px 0 #f9dc88}.feature-golden_harvest .reel:has(.expanded-wild){box-shadow:inset 2px 0 #e8c375,inset -2px 0 #e8c375}
+.feature-barn_frenzy .hatch-wild>.spine-art{animation:bcv27-roam 3s ease-in-out infinite}.feature-golden_harvest .hatch-wild>.spine-art{animation:bcv27-expand 3s ease-in-out infinite}
+@keyframes bcv27-roam{0%,100%{transform:translateY(0) rotate(-3deg)}45%{transform:translateY(-8px) rotate(4deg)}70%{transform:translateY(2px) rotate(-2deg)}}
+@keyframes bcv27-expand{0%,55%,100%{transform:scale(.88)}25%,40%{transform:scale(1.09)}}
+@keyframes bcv27-wild-land{0%{transform:translateY(-16%) rotate(-8deg);opacity:.35}60%{transform:translateY(3%) rotate(2deg);opacity:1}100%{transform:translateY(0) rotate(0);opacity:1}}
+@keyframes bcv27-reel-grow{0%{transform:scale(.55);opacity:.3}70%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@media(max-width:550px){.game-dialog.buy-dialog.feature-dialog.bonus-choice-dialog{padding:26px 17px 18px;gap:8px}.bonus-choice-v27{gap:9px}.bcv27-intro{font-size:12px}.bcv27-cards{gap:7px}.bcv27-card{grid-template-columns:14px minmax(0,1fr);padding:8px 5px;gap:4px;text-align:center}.bcv27-card input{width:14px;height:14px;grid-row:1}.bcv27-art{height:58px;grid-column:2;grid-row:1}.bcv27-card-copy{grid-column:1/-1;gap:4px}.bcv27-card-copy strong{font-size:15px}.bcv27-card-copy>span{font-size:10px}.bcv27-card-copy small{font-size:9px}.bcv27-rules{font-size:12px;padding:10px;min-height:0}.bcv27-cost{gap:10px}.bcv27-cost>strong{font-size:22px}.bcv27-cost>span{font-size:9px}.bonus-choice-v27>.feature-button{font-size:17px;height:52px}.bcv27-confirm{grid-template-columns:75px minmax(0,1fr);gap:8px}.bcv27-confirm>.spine-art{width:75px;height:110px}.bcv27-confirm h2{font-size:19px}.bcv27-confirm p{font-size:12px}.bcv27-confirm p:nth-of-type(2),.bcv27-back{grid-column:1/-1}}
+@media(orientation:landscape) and (max-height:500px){.game-dialog.buy-dialog.feature-dialog.bonus-choice-dialog{padding:17px 24px 15px;gap:8px}.bonus-choice-v27{gap:7px}.bcv27-card{padding:6px;grid-template-columns:14px 42px minmax(0,1fr);gap:5px;text-align:left}.bcv27-card input{width:14px;height:14px}.bcv27-art{height:45px;grid-row:auto;grid-column:auto}.bcv27-card-copy{grid-column:auto;gap:2px}.bcv27-card-copy strong{font-size:15px}.bcv27-card-copy>span{font-size:10px}.bcv27-card-copy small{font-size:8px}.bcv27-intro{font-size:11px}.bcv27-rules{font-size:11px;padding:8px;min-height:0}.bcv27-cost>strong{font-size:22px}.bonus-choice-v27>.feature-button{height:45px;font-size:16px}.bcv27-confirm>.spine-art{height:110px}.bcv27-confirm p{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.bcv27-art,.symbol.roaming-wild>.spine-art,.symbol.expanded-wild>.spine-art,.feature-barn_frenzy .hatch-wild>.spine-art,.feature-golden_harvest .hatch-wild>.spine-art{animation:none!important}}
+
+/* The stake, total cost and action are a fixed final row, never scroll content. */
+.game-dialog.buy-dialog.feature-dialog.bonus-choice-dialog{display:grid;grid-template-rows:auto minmax(0,1fr);align-content:stretch;width:min(920px,calc(100vw - 20px));height:min(560px,calc(100svh - 20px));max-height:calc(100svh - 20px);padding:26px 30px;gap:12px;overflow:visible}
+.bonus-choice-dialog .barn-cabinet{display:none}.bonus-choice-dialog .barn-compact-frame{display:block}
+.bonus-choice-dialog>.dialog-scroll{display:flex;min-height:0;overflow:visible;padding:0}
+.bonus-choice-v27{display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;gap:10px;width:100%;height:100%;min-height:0}
+.bonus-choice-v27.is-confirming{grid-template-rows:minmax(0,1fr) auto}
+.bcv27-intro{font-size:13px;line-height:1.3}.bcv27-cards{min-height:0;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:10px}
+.bcv27-card{position:relative;display:flex;flex-direction:row;justify-content:center;gap:10px;padding:12px 16px;min-height:0;overflow:hidden;text-align:left}
+.bcv27-card input{position:absolute;right:9px;top:9px;margin:0;width:15px;height:15px}.bcv27-art{display:block;flex:0 0 90px;width:90px;height:100%;max-height:110px;min-height:0}.bcv27-card-copy{gap:8px;min-width:0;max-width:calc(100% - 95px)}
+.bcv27-card-copy strong{font-size:22px;line-height:1.14}.bcv27-card-copy small{font-size:11px;line-height:1.2;letter-spacing:0}
+.bcv27-rules{min-height:0;padding:10px 14px;text-align:center;font-size:14px;line-height:1.35;margin:0}
+.bcv27-footer{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr) minmax(0,1.2fr);gap:14px;align-items:center;min-width:0;padding-top:8px;border-top:1px solid #d7ad6655}
+.bcv27-bet{min-width:0}.bcv27-bet .purchase-bet,.bcv27-readonly-bet{display:flex;flex-direction:column;gap:3px;align-items:stretch;padding:0;margin:0;background:none;text-align:center;min-width:0}.bcv27-bet .purchase-bet>span,.bcv27-readonly-bet>span{font:10px/1.2 AlphaUI,serif;letter-spacing:.7px;color:#ead293}.bcv27-bet .game-select{height:38px;min-height:0;width:100%;font-size:16px;justify-content:center;padding:5px 9px}
+.bcv27-readonly-bet>strong{display:block;font:22px/1.3 AlphaDisplay,serif;color:#ffe5a0;min-width:0}
+.bcv27-cost{flex-direction:column;gap:4px;text-align:center}.bcv27-cost>span{font-size:10px;line-height:1.2}.bcv27-cost>strong{max-width:100%;width:100%;font-size:27px;line-height:1.2}
+.bcv27-footer>.feature-button{width:100%;max-width:100%;height:56px;margin:0;padding:8px 16px;font-size:18px;line-height:1.12;letter-spacing:.4px;align-self:end}
+.bcv27-confirm{grid-template-columns:minmax(80px,.4fr) minmax(0,1fr);gap:10px 24px;align-content:center;min-height:0}.bcv27-confirm>.spine-art{grid-row:1/5;width:100%;height:min(230px,32svh);max-height:100%;min-height:0}.bcv27-confirm h2{font-size:27px;line-height:1.15}.bcv27-confirm p{font-size:16px;line-height:1.35}.bcv27-confirm p.bcv27-disclaimer{font-size:13px;opacity:.8}.bcv27-back{min-height:32px;font-size:13px;padding:5px 0}
+@media(orientation:portrait) and (max-width:550px){
+ .game-dialog.buy-dialog.feature-dialog.bonus-choice-dialog{width:calc(100vw - 16px);height:min(550px,calc(100svh - 20px));padding:20px 15px 17px;gap:9px}
+ .bonus-choice-dialog>[data-slot=dialog-title]{font-size:22px!important;line-height:1.15!important;padding:0 20px!important}.bonus-choice-v27{gap:8px}.bcv27-intro{font-size:11px}
+ .bcv27-cards{gap:8px}.bcv27-card{flex-direction:column;padding:10px 6px 8px;gap:4px;text-align:center}.bcv27-card input{top:7px;right:7px;width:14px;height:14px}.bcv27-art{flex:1 1 auto;height:58px;max-height:78px;width:68px}.bcv27-card-copy{max-width:100%;gap:4px}.bcv27-card-copy strong{font-size:15px;line-height:1.12}.bcv27-card-copy small{font-size:9px}
+ .bcv27-rules{padding:8px;font-size:12px;line-height:1.35}.bcv27-footer{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;padding-top:7px}.bcv27-footer>.feature-button{grid-column:1/-1;height:48px;font-size:18px;padding:8px 15px}.bcv27-cost>strong{font-size:23px}.bcv27-bet .game-select{height:32px;font-size:14px}.bcv27-readonly-bet>strong{font-size:20px}
+ .bcv27-confirm{grid-template-columns:74px minmax(0,1fr);gap:9px}.bcv27-confirm>.spine-art{height:145px}.bcv27-confirm h2{font-size:20px}.bcv27-confirm p{font-size:13px}.bcv27-confirm p.bcv27-disclaimer{grid-column:1/-1;font-size:12px}.bcv27-confirm .bcv27-back{grid-column:1/-1}
+}
+@media(orientation:landscape) and (max-height:500px){
+ .game-dialog.buy-dialog.feature-dialog.bonus-choice-dialog{width:min(850px,calc(100vw - 14px));height:calc(100svh - 14px);max-height:calc(100svh - 14px);padding:14px 18px;gap:7px}
+ .bonus-choice-dialog>[data-slot=dialog-title]{font-size:25px!important;line-height:1.1!important;padding:0 28px!important}.bonus-choice-v27{grid-template-rows:minmax(0,1fr) auto auto;gap:7px}.bcv27-intro{display:none}.bcv27-cards{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:7px}
+ .bcv27-card{flex-direction:column;gap:4px;padding:8px 5px;text-align:center}.bcv27-art{flex:1 1 auto;width:84px;height:64px;max-height:110px}.bcv27-card-copy{max-width:100%;gap:4px}.bcv27-card-copy strong{font-size:16px;line-height:1.1}.bcv27-card-copy small{font-size:9px}.bcv27-card input{width:13px;height:13px;right:5px;top:5px}
+ .bcv27-rules{font-size:12px;line-height:1.3;padding:7px}.bcv27-footer{gap:12px;padding-top:6px;grid-template-columns:minmax(0,.85fr) minmax(0,1fr) minmax(0,1.2fr)}.bcv27-bet .game-select{height:32px;font-size:14px}.bcv27-cost>strong{font-size:24px}.bcv27-footer>.feature-button{grid-column:auto;height:47px;font-size:16px}.bcv27-confirm{grid-template-columns:110px minmax(0,1fr);gap:7px 18px}.bcv27-confirm>.spine-art{height:150px}.bcv27-confirm h2{font-size:23px}.bcv27-confirm p{font-size:13px}.bcv27-confirm p.bcv27-disclaimer{grid-column:2;font-size:11px}.bcv27-confirm .bcv27-back{grid-column:2}
+}
+@media(orientation:landscape) and (max-height:280px){
+ .game-dialog.buy-dialog.feature-dialog.bonus-choice-dialog{width:calc(100vw - 10px);height:calc(100svh - 10px);max-height:calc(100svh - 10px);padding:9px 11px;gap:4px}
+ .bonus-choice-dialog>[data-slot=dialog-title]{font-size:16px!important;line-height:1.05!important;padding:0 22px!important}.bonus-choice-dialog>.close-dialog{top:7px;right:7px;width:23px;height:23px}.bonus-choice-v27{gap:4px}.bcv27-cards{gap:4px}.bcv27-card{padding:4px 2px;gap:2px}.bcv27-card input{width:10px;height:10px;top:4px;right:4px}.bcv27-art{width:37px;height:33px;max-height:38px}.bcv27-card-copy{gap:2px}.bcv27-card-copy strong{font-size:10px;line-height:1.1}.bcv27-card-copy small{font-size:7px;line-height:1.1}
+ .bcv27-rules{padding:4px 6px;font-size:9px;line-height:1.25}.bcv27-footer{gap:7px;padding-top:4px;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1.3fr)}.bcv27-bet .purchase-bet>span,.bcv27-readonly-bet>span,.bcv27-cost>span{font-size:7px;line-height:1.1}.bcv27-bet .game-select{height:33px;font-size:11px;padding:3px 6px}.bcv27-cost>strong,.bcv27-readonly-bet>strong{font-size:16px}.bcv27-footer>.feature-button{height:44px;font-size:11px;padding:5px 8px;letter-spacing:0}
+ .bcv27-confirm{grid-template-columns:55px minmax(0,1fr);gap:3px 12px}.bcv27-confirm>.spine-art{height:82px}.bcv27-confirm h2{font-size:16px}.bcv27-confirm p{font-size:10px}.bcv27-confirm p.bcv27-disclaimer{font-size:9px}.bcv27-confirm .bcv27-back{min-height:44px;font-size:10px;padding:2px 0}
+}
+
+/* Each card demonstrates its own mechanic with cached raster game art. */
+.bcv27-card .bcv27-art{flex:0 0 132px;width:132px;height:100px;max-height:100px;animation:none!important;transform:none}
+.bcv27-mechanic-preview{display:block;width:100%;height:100%;border-radius:5px;box-shadow:0 3px 8px #0005}
+.bcv27-card-copy{max-width:calc(100% - 142px);gap:6px}.bcv27-card-copy>span{font:13px/1.25 AlphaUI,serif;color:#f7e6bf}
+.bcv27-card[data-feature=BARN_CASCADES]{border-color:#659b9b}.bcv27-card[data-feature=BARN_CASCADES] .bcv27-card-copy>span{color:#bfeef1}
+.bcv27-card[data-feature=GOLDEN_COLLECT]{border-color:#b99a4e}.bcv27-card[data-feature=GOLDEN_COLLECT] .bcv27-card-copy>span{color:#ffe3a0}
+.bcv27-card[data-feature=GOLDEN_HATCH]{border-color:#b58670}.bcv27-card[data-feature=GOLDEN_HATCH] .bcv27-card-copy>span{color:#ffd7bb}
+.bcv27-card.selected{border-color:#ffe28a}
+@media(orientation:portrait) and (max-width:550px){
+ .bcv27-card .bcv27-art{flex:0 1 67px;width:min(110px,100%);height:67px;max-height:75px;min-height:42px}.bcv27-card-copy{max-width:100%;gap:3px}.bcv27-card-copy>span{font-size:10px;line-height:1.18}.bcv27-card-copy small{font-size:8px;line-height:1.15}.bcv27-card{gap:5px;padding:9px 5px 7px}
+}
+@media(orientation:landscape) and (max-height:500px){
+ .bcv27-card .bcv27-art{flex:1 1 90px;width:min(130px,100%);height:90px;max-height:105px;min-height:35px}.bcv27-card-copy{max-width:100%;gap:4px}.bcv27-card-copy>span{font-size:11px;line-height:1.2}.bcv27-card-copy small{font-size:8px}.bcv27-card{gap:7px;padding:10px 6px}
+}
+@media(orientation:landscape) and (max-height:280px){
+ .bonus-choice-v27.is-choosing{grid-template-rows:minmax(0,1fr) auto}.is-choosing .bcv27-rules{display:none}.bcv27-card .bcv27-art{flex:1 1 40px;width:min(65px,100%);height:40px;max-height:47px;min-height:27px}.bcv27-card-copy{gap:2px}.bcv27-card-copy>span{font-size:8px;line-height:1.15}.bcv27-card-copy small{font-size:6px;line-height:1.1}.bcv27-card{gap:3px;padding:5px 3px}.bcv27-card-copy strong{font-size:10px;line-height:1.1}
+}

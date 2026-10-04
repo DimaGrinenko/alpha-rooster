@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@source not '../math';
+@source not '../build';
+@source not '../outputs';
+@custom-variant dark (&:is(.dark *));
+@font-face{font-family:AlphaDisplay;src:url('/fonts/TitanOne-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:AlphaUI;src:url('/fonts/BreeSerif-Regular.ttf') format('truetype');font-weight:600;font-display:swap}
+@theme inline {
+ --color-background:var(--background); --color-foreground:var(--foreground);
+ --color-popover:var(--popover); --color-popover-foreground:var(--foreground);
+ --color-primary:var(--primary); --color-primary-foreground:#142023;
+ --color-muted:#242d33; --color-muted-foreground:var(--muted-foreground);
+ --color-input:var(--input); --color-border:var(--border); --color-ring:var(--ring);
+ --font-sans:AlphaUI,Arial,Helvetica,sans-serif; --radius-lg:.75rem;
+}
+:root,.dark {
+ --background:#10171c; --foreground:#f8fafb; --popover:#182128;
+ --primary:#ffce54; --border:#354149; --ring:#ffda76;
+ --input:#232e35; --muted-foreground:#aebbc2; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body,#root{width:100%;min-height:100%;margin:0}
+body{font-family:AlphaUI,Arial,Helvetica,sans-serif;background:var(--background);color:var(--foreground)}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}
+button:disabled{cursor:default;opacity:.4}
+button:focus-visible{outline:2px solid var(--ring);outline-offset:4px}
+.raster,.spine-art{display:block;width:100%;height:100%;min-width:0;min-height:0}
+.game-shell svg,.game-dialog svg,.game-select svg,.game-select-list svg{display:none!important}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
